@@ -133,6 +133,15 @@ const FileContent = ({ item }: FileContentProps) => {
   } = useFileContentUrl(item.id);
   const { mutate: triggerAction } = mutations.usePostItemAction();
 
+  const onCollapse = (c: boolean) => {
+    triggerAction({
+      itemId: item.id,
+      payload: {
+        type: c ? ActionTriggers.CollapseItem : ActionTriggers.UnCollapseItem,
+      },
+    });
+  };
+
   const onDownloadClick = useCallback(() => {
     triggerAction({
       itemId: item.id,
@@ -168,6 +177,7 @@ const FileContent = ({ item }: FileContentProps) => {
       showCollapse={item.settings?.isCollapsible}
       pdfViewerLink={PDF_VIEWER_LINK}
       onClick={onDownloadClick}
+      onCollapse={onCollapse}
     />
   );
 };
@@ -184,6 +194,15 @@ const LinkContent = ({ item }: { item: LinkItemType }): JSX.Element => {
     });
   };
 
+  const onCollapse = (c: boolean) => {
+    triggerAction({
+      itemId: item.id,
+      payload: {
+        type: c ? ActionTriggers.CollapseItem : ActionTriggers.UnCollapseItem,
+      },
+    });
+  };
+
   return (
     <Box id={buildLinkItemId(item.id)}>
       <LinkItem
@@ -196,21 +215,35 @@ const LinkContent = ({ item }: { item: LinkItemType }): JSX.Element => {
         showIframe={item.settings?.showLinkIframe}
         showCollapse={item.settings?.isCollapsible}
         onClick={handleLinkClick}
+        onCollapse={onCollapse}
       />
     </Box>
   );
 };
 
-const DocumentContent = ({ item }: { item: DocumentItemType }): JSX.Element => (
-  <DocumentItem
-    id={buildDocumentId(item.id)}
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    showTitle={item.settings?.showTitle}
-    item={{ ...item, name: item.displayName }}
-    showCollapse={item.settings?.isCollapsible}
-  />
-);
+const DocumentContent = ({ item }: { item: DocumentItemType }): JSX.Element => {
+  const { mutate: triggerAction } = mutations.usePostItemAction();
+
+  const onCollapse = (c: boolean) => {
+    triggerAction({
+      itemId: item.id,
+      payload: {
+        type: c ? ActionTriggers.CollapseItem : ActionTriggers.UnCollapseItem,
+      },
+    });
+  };
+  return (
+    <DocumentItem
+      id={buildDocumentId(item.id)}
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-expect-error
+      showTitle={item.settings?.showTitle}
+      item={{ ...item, name: item.displayName }}
+      showCollapse={item.settings?.isCollapsible}
+      onCollapse={onCollapse}
+    />
+  );
+};
 
 const AppContent = ({ item }: { item: AppItemType }): JSX.Element => {
   const {
@@ -219,7 +252,16 @@ const AppContent = ({ item }: { item: AppItemType }): JSX.Element => {
     isSuccess: isSuccessMember,
   } = useCurrentMemberContext();
   const { t: translateMessage } = useMessagesTranslation();
+  const { mutate: triggerAction } = mutations.usePostItemAction();
 
+  const onCollapse = (c: boolean) => {
+    triggerAction({
+      itemId: item.id,
+      payload: {
+        type: c ? ActionTriggers.CollapseItem : ActionTriggers.UnCollapseItem,
+      },
+    });
+  };
   if (member || isSuccessMember)
     return (
       <AppItem
@@ -240,6 +282,7 @@ const AppContent = ({ item }: { item: AppItemType }): JSX.Element => {
           itemId: item.id,
         }}
         showCollapse={item.settings?.isCollapsible}
+        onCollapse={onCollapse}
       />
     );
 
@@ -258,6 +301,8 @@ const AppContent = ({ item }: { item: AppItemType }): JSX.Element => {
 
 const H5PContent = ({ item }: { item: H5PItemType }): JSX.Element => {
   const { t: translateMessage } = useMessagesTranslation();
+  const { mutate: triggerAction } = mutations.usePostItemAction();
+
   const contentId = item?.extra?.h5p?.contentId;
   if (!contentId) {
     return (
@@ -266,6 +311,14 @@ const H5PContent = ({ item }: { item: H5PItemType }): JSX.Element => {
       </Alert>
     );
   }
+  const onCollapse = (c: boolean) => {
+    triggerAction({
+      itemId: item.id,
+      payload: {
+        type: c ? ActionTriggers.CollapseItem : ActionTriggers.UnCollapseItem,
+      },
+    });
+  };
 
   return (
     <H5PItem
@@ -274,6 +327,7 @@ const H5PContent = ({ item }: { item: H5PItemType }): JSX.Element => {
       contentId={contentId}
       integrationUrl={H5P_INTEGRATION_URL}
       showCollapse={item.settings?.isCollapsible}
+      onCollapse={onCollapse}
     />
   );
 };
