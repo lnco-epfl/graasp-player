@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.18.0](https://github.com/graasp/graasp-player/compare/v2.17.0...v2.18.0) (2024-08-22)
+
+
+### Features
+
+* update for item login ([#832](https://github.com/graasp/graasp-player/issues/832)) ([6fb2ecf](https://github.com/graasp/graasp-player/commit/6fb2ecf602d46a570faacb24344f9d23fe1916fc))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @mui/lab to v5.0.0-alpha.173 ([#821](https://github.com/graasp/graasp-player/issues/821)) ([01925f4](https://github.com/graasp/graasp-player/commit/01925f4d61f0aeacf251d2d9893b582216d63422))
+* **deps:** update dependency stylis to v4.3.3 ([#834](https://github.com/graasp/graasp-player/issues/834)) ([15aa25a](https://github.com/graasp/graasp-player/commit/15aa25a3ec23d011d6f4090571e695a3783a8686))
+* udpate ui ([#825](https://github.com/graasp/graasp-player/issues/825)) ([1344fef](https://github.com/graasp/graasp-player/commit/1344fef750e33d43d307a2c8a83aad6cde0aa99c))
+
 ## [2.17.0](https://github.com/graasp/graasp-player/compare/v2.16.0...v2.17.0) (2024-08-09)
 
 
