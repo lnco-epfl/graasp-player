@@ -655,12 +655,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:^19.4.0":
-  version: 19.4.0
-  resolution: "@commitlint/cli@npm:19.4.0"
+"@commitlint/cli@npm:^19.4.1":
+  version: 19.4.1
+  resolution: "@commitlint/cli@npm:19.4.1"
   dependencies:
     "@commitlint/format": "npm:^19.3.0"
-    "@commitlint/lint": "npm:^19.2.2"
+    "@commitlint/lint": "npm:^19.4.1"
     "@commitlint/load": "npm:^19.4.0"
     "@commitlint/read": "npm:^19.4.0"
     "@commitlint/types": "npm:^19.0.3"
@@ -668,7 +668,7 @@ __metadata:
     yargs: "npm:^17.0.0"
   bin:
     commitlint: cli.js
-  checksum: 10/be6e7cdc11b20d29f840eaff4d8231a8180f1355100e05a1b5652a4fc19d63c254b11e47bb29c44de073998cd8d13f62b4b1f0ea404f39a54064b0d56e3a1baf
+  checksum: 10/9199d3c6587476ba94dca4f55928d4461a6f380a96861e20a11d363ff9744b8f9a5955407510020402c15b226c5505e4050a9a21dd7d096f9bfc30bb3571edf7
   languageName: node
   linkType: hard
 
@@ -733,15 +733,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/lint@npm:^19.2.2":
-  version: 19.2.2
-  resolution: "@commitlint/lint@npm:19.2.2"
+"@commitlint/lint@npm:^19.4.1":
+  version: 19.4.1
+  resolution: "@commitlint/lint@npm:19.4.1"
   dependencies:
     "@commitlint/is-ignored": "npm:^19.2.2"
     "@commitlint/parse": "npm:^19.0.3"
-    "@commitlint/rules": "npm:^19.0.3"
+    "@commitlint/rules": "npm:^19.4.1"
     "@commitlint/types": "npm:^19.0.3"
-  checksum: 10/9bf2ffa0f6cdde3d53d755b95ca717afd193f4560ae5bb0f5ffd7f1bbd571ddc99b27417733c70e1adbd74a5197e4525493b2dfc116680a939db7728fefa805c
+  checksum: 10/57f264eafbd787015d589f663917e19e5f246b3ffd162064cb004009532e541191b13d482174f43a7f5953accf183682d580bf7914552061987efc58811659d8
   languageName: node
   linkType: hard
 
@@ -808,16 +808,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/rules@npm:^19.0.3":
-  version: 19.0.3
-  resolution: "@commitlint/rules@npm:19.0.3"
+"@commitlint/rules@npm:^19.4.1":
+  version: 19.4.1
+  resolution: "@commitlint/rules@npm:19.4.1"
   dependencies:
     "@commitlint/ensure": "npm:^19.0.3"
     "@commitlint/message": "npm:^19.0.0"
     "@commitlint/to-lines": "npm:^19.0.0"
     "@commitlint/types": "npm:^19.0.3"
     execa: "npm:^8.0.1"
-  checksum: 10/218033d96b0bae7dbea0e46483f8af823c17b492e4b0c4dca93a6312876d051cc88f4272d009e7eb06ff05585ec511aedd703132be17c7248698a4eac909986b
+  checksum: 10/c5626278aa6ee08194f1b7880345fcbc64b19a2f7ca52f54cd027fb19337fb60008b55a2fe7a4159dd227d41ffb48b30e51347101a58f842d37991a416a678a7
   languageName: node
   linkType: hard
 
@@ -847,13 +847,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cypress/code-coverage@npm:3.12.45":
-  version: 3.12.45
-  resolution: "@cypress/code-coverage@npm:3.12.45"
+"@cypress/code-coverage@npm:3.12.47":
+  version: 3.12.47
+  resolution: "@cypress/code-coverage@npm:3.12.47"
   dependencies:
     "@cypress/webpack-preprocessor": "npm:^6.0.0"
     chalk: "npm:4.1.2"
-    dayjs: "npm:1.11.12"
+    dayjs: "npm:1.11.13"
     debug: "npm:4.3.6"
     execa: "npm:4.1.0"
     globby: "npm:11.1.0"
@@ -866,7 +866,7 @@ __metadata:
     babel-loader: ^8.3 || ^9
     cypress: "*"
     webpack: ^4 || ^5
-  checksum: 10/95ef341f0ed5f5673823b2d89224a0c5d5eb41a9eb759606b214c48b1b292f7905a0f284e0db42b0c4ff04d3a897c8765ae7c3832f9b92e210162136726f15b1
+  checksum: 10/5b92f053633587727e02b2cff2ce30f9c1c77cfea674283c71f75b1e4b092d5a503bf4ebf72d9fd9c5a34150d14bd68dd6276a9cada1f8dbddd0fd1ffb208bfc
   languageName: node
   linkType: hard
 
@@ -2835,29 +2835,29 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*":
-  version: 20.14.12
-  resolution: "@types/node@npm:20.14.12"
+  version: 22.5.4
+  resolution: "@types/node@npm:22.5.4"
   dependencies:
-    undici-types: "npm:~5.26.4"
-  checksum: 10/9205bf46ef6a99d99cdde9efeb8218cd15803cc407249c2336557cd630b006380dad68c03ee574934414639f8e450044f45530c92788a8e82078bae45ee40f93
+    undici-types: "npm:~6.19.2"
+  checksum: 10/d46e0abf437b36bdf89011287aa43873d68ea6f2521a11b5c9a033056fd0d07af36daf51439010e8d41c62c55d0b00e9b5e09ed00bb2617723f73f28a873903a
   languageName: node
   linkType: hard
 
 "@types/node@npm:^18.0.0":
-  version: 18.19.42
-  resolution: "@types/node@npm:18.19.42"
+  version: 18.19.50
+  resolution: "@types/node@npm:18.19.50"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10/024e8a6fac679fb4ec41a53ffa986806f3ac49b6003c380e84afb088280b463112e056f2c4ad1db3e6e36a60be75a18c3af9903ddeeb483f470e9ea629bee6f2
+  checksum: 10/d238bb877953fcecda830df140f8722b9ba9644ae63e810fe6fa40cab8285c42f9b34c9529f2144a6f8cfeee5b0ff7fefd9425261e41830157d6710d501b829d
   languageName: node
   linkType: hard
 
 "@types/node@npm:^20.16.1":
-  version: 20.16.1
-  resolution: "@types/node@npm:20.16.1"
+  version: 20.16.5
+  resolution: "@types/node@npm:20.16.5"
   dependencies:
     undici-types: "npm:~6.19.2"
-  checksum: 10/9bae1dffd2094694147a91ebec51dc89a60a607d16d47a0d770320f1a75d3ba58663708fd93c37954a63acb701a4e0fd64245139c57ae810d3ad524e75481d4e
+  checksum: 10/39a8457149dc17cdea57afc90d4da53182fdb8b958d5bb065a15d123d81d4efa6b51a0de92428d05ead2e63ce07195586f71083401b99cdbcd04662344fbf7a1
   languageName: node
   linkType: hard
 
@@ -2928,13 +2928,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:18.3.4":
-  version: 18.3.4
-  resolution: "@types/react@npm:18.3.4"
+"@types/react@npm:18.3.5":
+  version: 18.3.5
+  resolution: "@types/react@npm:18.3.5"
   dependencies:
     "@types/prop-types": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 10/359973924be42cf9e7366e1d885b28e0b3bd56d31f24458c5351af7a3f2fc070511e90d517b2195fb229146cdcb70342db6318e279c31dd5057beec1105b704e
+  checksum: 10/ba0477c5ad4a762157c6262a199af6ccf9e24576877a26a7f516d5a9ba35374a6ac7f8686a10e5e8030513214f02bcb66e8363e43905afb7cd313deaf673de05
   languageName: node
   linkType: hard
 
@@ -4189,15 +4189,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commitlint@npm:19.4.0":
-  version: 19.4.0
-  resolution: "commitlint@npm:19.4.0"
+"commitlint@npm:19.4.1":
+  version: 19.4.1
+  resolution: "commitlint@npm:19.4.1"
   dependencies:
-    "@commitlint/cli": "npm:^19.4.0"
+    "@commitlint/cli": "npm:^19.4.1"
     "@commitlint/types": "npm:^19.0.3"
   bin:
     commitlint: cli.js
-  checksum: 10/432ea840a2c261a3bd7d7c4f1f08127e42f7abe1336cf7aa6b659af32de8fc6b5bc60f28ded9ea24f16bbfae1633b9a70959b876ee5717d001afba6966b4c82e
+  checksum: 10/30812a8bb3e19104e70a4eff88b4d1370e2e3403e2afc9138480b8093b2ef63d1bd6c39bbe0d2330ec6dd67508f3fbdc1f7136e21df436026813eeaaf98e2dc4
   languageName: node
   linkType: hard
 
@@ -4564,10 +4564,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:1.11.12":
-  version: 1.11.12
-  resolution: "dayjs@npm:1.11.12"
-  checksum: 10/8ee7c1e14961fd08d40b788d0c0e930dc6288b3d32911bb911b2fb31bb703c262788164fbe678ee9e50e2a35268d667b8c8ba43fd1806771c1f404c300a2b428
+"dayjs@npm:1.11.13":
+  version: 1.11.13
+  resolution: "dayjs@npm:1.11.13"
+  checksum: 10/7374d63ab179b8d909a95e74790def25c8986e329ae989840bacb8b1888be116d20e1c4eee75a69ea0dfbae13172efc50ef85619d304ee7ca3c01d5878b704f5
   languageName: node
   linkType: hard
 
@@ -6420,7 +6420,7 @@ __metadata:
   resolution: "graasp-player@workspace:."
   dependencies:
     "@commitlint/config-conventional": "npm:19.2.2"
-    "@cypress/code-coverage": "npm:3.12.45"
+    "@cypress/code-coverage": "npm:3.12.47"
     "@emotion/cache": "npm:11.13.1"
     "@emotion/react": "npm:11.13.3"
     "@emotion/styled": "npm:11.13.0"
@@ -6438,7 +6438,7 @@ __metadata:
     "@types/lodash.isarray": "npm:^4.0.9"
     "@types/lodash.truncate": "npm:^4.4.9"
     "@types/node": "npm:^20.16.1"
-    "@types/react": "npm:18.3.4"
+    "@types/react": "npm:18.3.5"
     "@types/react-dom": "npm:^18.3.0"
     "@types/react-helmet": "npm:^6.1.11"
     "@types/uuid": "npm:10.0.0"
@@ -6446,7 +6446,7 @@ __metadata:
     "@typescript-eslint/parser": "npm:8.2.0"
     "@vitejs/plugin-react": "npm:^4.3.1"
     classnames: "npm:2.5.1"
-    commitlint: "npm:19.4.0"
+    commitlint: "npm:19.4.1"
     concurrently: "npm:8.2.2"
     cypress: "npm:13.13.3"
     cypress-iframe: "npm:1.0.1"
@@ -6486,7 +6486,7 @@ __metadata:
     stylis-plugin-rtl: "npm:2.1.1"
     typescript: "npm:5.5.4"
     uuid: "npm:10.0.0"
-    vite: "npm:5.4.2"
+    vite: "npm:5.4.3"
     vite-plugin-checker: "npm:^0.7.2"
     vite-plugin-istanbul: "npm:6.0.2"
     vitest: "npm:2.0.5"
@@ -9387,14 +9387,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.41":
-  version: 8.4.41
-  resolution: "postcss@npm:8.4.41"
+"postcss@npm:^8.4.43":
+  version: 8.4.45
+  resolution: "postcss@npm:8.4.45"
   dependencies:
     nanoid: "npm:^3.3.7"
     picocolors: "npm:^1.0.1"
     source-map-js: "npm:^1.2.0"
-  checksum: 10/6e6176c2407eff60493ca60a706c6b7def20a722c3adda94ea1ece38345eb99964191336fd62b62652279cec6938e79e0b1e1d477142c8d3516e7a725a74ee37
+  checksum: 10/7eaf7346d04929ee979548ece5e34d253eae6f175346e298b2c4621ad6f4ee00adfe7abe72688640e910c0361ae50537c5dda3e35fd1066491282c342b3ee5c8
   languageName: node
   linkType: hard
 
@@ -11798,13 +11798,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:5.4.2":
-  version: 5.4.2
-  resolution: "vite@npm:5.4.2"
+"vite@npm:5.4.3":
+  version: 5.4.3
+  resolution: "vite@npm:5.4.3"
   dependencies:
     esbuild: "npm:^0.21.3"
     fsevents: "npm:~2.3.3"
-    postcss: "npm:^8.4.41"
+    postcss: "npm:^8.4.43"
     rollup: "npm:^4.20.0"
   peerDependencies:
     "@types/node": ^18.0.0 || >=20.0.0
@@ -11837,7 +11837,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10/c449f9295060fa88c9b5cc1bd17c2de198deae596b7da1250db9662fb15e7b21e0dbe9a40a9106fb7438b1231494b169457e809ecbb65e732648d87dd284ab23
+  checksum: 10/864bf64fe57bd26b1527ea6d8dac2f4f8b834791f836590043463c0ded6a150a9407ffac6a859abc34ec013ecfcd23f405c20aa76f4ad99deab1176d5f017574
   languageName: node
   linkType: hard
 
