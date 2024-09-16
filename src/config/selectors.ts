@@ -65,7 +65,6 @@ export const APP_NAVIGATION_PLATFORM_SWITCH_ID = 'appNavigationPlatformSwitch';
 export const APP_NAVIGATION_PLATFORM_SWITCH_BUTTON_IDS = {
   [Platform.Builder]: 'appNavigationPlatformSwitchButtonBuilder',
   [Platform.Player]: 'appNavigationPlatformSwitchButtonPlayer',
-  [Platform.Library]: 'appNavigationPlatformSwitchButtonLibrary',
   [Platform.Analytics]: 'appNavigationPlatformSwitchButtonAnalytics',
 };
 
