@@ -1,7 +1,13 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet';
 
-import { Pagination, PaginationItem, Stack, Typography } from '@mui/material';
+import {
+  Alert,
+  Pagination,
+  PaginationItem,
+  Stack,
+  Typography,
+} from '@mui/material';
 import Grid2 from '@mui/material/Unstable_Grid2';
 
 import { PackedItem } from '@graasp/sdk';
@@ -35,8 +41,18 @@ const DisplayItems = ({
 }: {
   items?: PackedItem[];
   isLoading: boolean;
-}): JSX.Element[] | null => {
+}): JSX.Element[] | JSX.Element | null => {
+  const { t } = usePlayerTranslation();
+
   if (items) {
+    if (!items.length) {
+      return (
+        <Alert severity="info" sx={{ m: 1, width: '100%' }}>
+          {t(PLAYER.HOME_EMPTY)}
+        </Alert>
+      );
+    }
+
     return items.map((item) => (
       <GridWrapper key={item.id}>
         <ItemCard item={item} />
@@ -44,8 +60,8 @@ const DisplayItems = ({
     ));
   }
   if (isLoading) {
-    return Array.from(Array(6)).map(() => (
-      <GridWrapper>
+    return Array.from(Array(6)).map((i) => (
+      <GridWrapper key={i}>
         <LoadingItemsIndicator />
       </GridWrapper>
     ));
