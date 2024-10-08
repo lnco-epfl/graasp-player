@@ -21,7 +21,7 @@ export const GRAASP_ACCOUNT_HOST =
   import.meta.env.VITE_GRAASP_ACCOUNT_HOST || 'http://localhost:3114';
 
 export const GRAASP_ANALYTICS_HOST =
-  import.meta.env.VITE_GRAASP_ANALYTICS_HOST || 'http://localhost:3012';
+  import.meta.env.VITE_GRAASP_ANALYTICS_HOST || 'http://localhost:3113';
 
 export const H5P_INTEGRATION_URL =
   import.meta.env.VITE_GRAASP_H5P_INTEGRATION_URL ||
