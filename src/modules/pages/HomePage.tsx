@@ -1,7 +1,13 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet';
 
-import { Pagination, PaginationItem, Stack, Typography } from '@mui/material';
+import {
+  Alert,
+  Pagination,
+  PaginationItem,
+  Stack,
+  Typography,
+} from '@mui/material';
 import Grid2 from '@mui/material/Unstable_Grid2';
 
 import { PackedItem } from '@graasp/sdk';
@@ -35,8 +41,18 @@ const DisplayItems = ({
 }: {
   items?: PackedItem[];
   isLoading: boolean;
-}): JSX.Element[] | false => {
+}): JSX.Element[] | JSX.Element | null => {
+  const { t } = usePlayerTranslation();
+
   if (items) {
+    if (!items.length) {
+      return (
+        <Alert severity="info" sx={{ m: 1, width: '100%' }}>
+          {t(PLAYER.HOME_EMPTY)}
+        </Alert>
+      );
+    }
+
     return items.map((item) => (
       <GridWrapper key={item.id}>
         <ItemCard item={item} />
@@ -44,13 +60,13 @@ const DisplayItems = ({
     ));
   }
   if (isLoading) {
-    return Array.from(Array(6)).map(() => (
-      <GridWrapper>
+    return Array.from(Array(6)).map((i) => (
+      <GridWrapper key={i}>
         <LoadingItemsIndicator />
       </GridWrapper>
     ));
   }
-  return false;
+  return null;
 };
 
 const HomePage = (): JSX.Element => {
@@ -58,7 +74,7 @@ const HomePage = (): JSX.Element => {
 
   const [page, setPage] = useState(1);
 
-  const { data: accessibleItems, isInitialLoading } = useAccessibleItems(
+  const { data: accessibleItems, isLoading } = useAccessibleItems(
     {},
     { page, pageSize: PAGE_SIZE },
   );
@@ -74,10 +90,7 @@ const HomePage = (): JSX.Element => {
             {t(PLAYER.RECENT_ITEMS_TITLE)}
           </Typography>
           <Grid2 container spacing={3} justifyItems="center">
-            <DisplayItems
-              items={accessibleItems?.data}
-              isLoading={isInitialLoading}
-            />
+            <DisplayItems items={accessibleItems?.data} isLoading={isLoading} />
           </Grid2>
         </Stack>
         <Pagination

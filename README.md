@@ -14,6 +14,7 @@
    VITE_GRAASP_AUTH_HOST=http://localhost:3001
    VITE_GRAASP_BUILDER_HOST=http://localhost:3111
    VITE_GRAASP_LIBRARY_HOST=http://localhost:3005
+   VITE_GRAASP_ANALYTICS_HOST=http://localhost:3113
    VITE_SENTRY_ENV=development
    VITE_SHOW_NOTIFICATIONS=true
    VITE_H5P_INTEGRATION_URL=
@@ -23,7 +24,7 @@
 
 ## Testing the app
 
-The tests are run using Cypress. Cypress only compiles the code for the tests, your app needs to run at the specified `baseUrl` (for tests this defaults to http://localhost:3112).
+The tests are run using Cypress. Cypress only compiles the code for the tests, your app needs to run at the specified `baseUrl` (for tests this defaults to <http://localhost:3112>).
 
 ### Running tests in interactive mode
 
@@ -35,6 +36,7 @@ VITE_GRAASP_API_HOST=http://localhost:3000
 VITE_GRAASP_AUTH_HOST=http://localhost:3001
 VITE_GRAASP_BUILDER_HOST=http://localhost:3111
 VITE_GRAASP_LIBRARY_HOST=http://localhost:3005
+VITE_GRAASP_ANALYTICS_HOST=http://localhost:3113
 VITE_H5P_INTEGRATION_URL=
 VITE_SHOW_NOTIFICATIONS=false
 ```

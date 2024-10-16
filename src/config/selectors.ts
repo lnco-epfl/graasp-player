@@ -12,6 +12,10 @@ export const buildAppId = (id: string): string => `app-${id}`;
 export const buildLinkItemId = (id: string): string => `link-${id}`;
 export const FOLDER_NAME_TITLE_CLASS = `folderNameTitle`;
 
+export const ITEM_LOGIN_USERNAME_INPUT_ID = 'itemLoginInput';
+export const ITEM_LOGIN_SIGN_IN_BUTTON_ID = 'itemLoginSignInButton';
+export const ITEM_LOGIN_PASSWORD_INPUT_ID = 'itemLoginPasswordInput';
+
 export const ITEM_FULLSCREEN_BUTTON_ID = 'itemFullscreenButton';
 
 export const ITEM_CHATBOX_ID = 'chatbox';
@@ -73,3 +77,8 @@ export const NAVIGATION_ISLAND_CY = 'navigationIsland';
 export const TREE_NODE_GROUP_CLASS = 'tree-node-group';
 export const BACK_TO_SHORTCUT_ID = 'backToButtonShortcut';
 export const ITEM_MAP_BUTTON_ID = 'itemMapButton';
+
+export const PREVENT_GUEST_MESSAGE_ID = 'prevent-guests';
+export const ENROLL_BUTTON_SELECTOR = 'enrollButton';
+export const REQUEST_MEMBERSHIP_BUTTON_ID = 'requestMembershipButton';
+export const FORBIDDEN_CONTENT_ID = 'forbiddenContent';

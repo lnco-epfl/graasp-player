@@ -52,8 +52,6 @@ const {
   buildGetMembersByEmailRoute,
   buildGetMembersByIdRoute,
   buildGetCurrentMemberRoute,
-  GET_OWN_ITEMS_ROUTE,
-  SHARED_ITEM_WITH_ROUTE,
   SIGN_OUT_ROUTE,
   buildGetItemGeolocationRoute,
 } = API_ROUTES;
@@ -61,58 +59,7 @@ const {
 export const isError = (error?: { statusCode: number }): boolean =>
   Boolean(error?.statusCode);
 
-export const mockGetOwnItems = ({
-  items,
-  currentMember,
-}: {
-  items: MockItem[];
-  currentMember: Member | null;
-}): void => {
-  cy.intercept(
-    {
-      method: DEFAULT_GET.method,
-      url: `${API_HOST}/${GET_OWN_ITEMS_ROUTE}`,
-    },
-    ({ reply }) => {
-      if (!currentMember) {
-        return reply({ statusCode: StatusCodes.UNAUTHORIZED, body: null });
-      }
-      const own = items.filter(
-        ({ creator, path }) =>
-          creator?.id === currentMember.id && !path.includes('.'),
-      );
-      return reply(own);
-    },
-  ).as('getOwnItems');
-};
-
-export const mockGetSharedItems = ({
-  items,
-  currentMember,
-}: {
-  items: MockItem[];
-  currentMember: Member | null;
-}): void => {
-  cy.intercept(
-    {
-      method: DEFAULT_GET.method,
-      url: `${API_HOST}/${SHARED_ITEM_WITH_ROUTE}`,
-    },
-    ({ reply }) => {
-      if (!currentMember) {
-        return reply({ statusCode: StatusCodes.UNAUTHORIZED, body: null });
-      }
-      const shared = items.filter(
-        ({ memberships, path }) =>
-          memberships?.find((m) => m.memberId === currentMember.id) &&
-          isRootItem({ path }),
-      );
-      return reply(shared);
-    },
-  ).as('getSharedItems');
-};
-
-export const mockGetAccessibleItems = (items: DiscriminatedItem[]): void => {
+export const mockGetAccessibleItems = (items: MockItem[]): void => {
   cy.intercept(
     {
       method: HttpMethod.Get,
@@ -486,25 +433,25 @@ export const mockGetItemsTags = (
   ).as('getItemsTags');
 };
 
-export const mockGetLoginSchemaType = (
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  items: MockItem[],
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  member: Member | null,
-): void => {
+export const mockGetLoginSchemaType = (itemLogins: {
+  [key: string]: string;
+}): void => {
   cy.intercept(
     {
       method: DEFAULT_GET.method,
       url: new RegExp(`${API_HOST}/${buildGetItemLoginSchemaRoute(ID_FORMAT)}`),
     },
     ({ reply, url }) => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const itemId = url.slice(API_HOST.length).split('/')[2];
 
       // todo: add response for itemLoginSchemaType
+      const itemLogin = itemLogins[itemId];
 
-      reply({
-        statusCode: StatusCodes.OK,
+      if (itemLogin) {
+        return reply(itemLogin);
+      }
+      return reply({
+        statusCode: StatusCodes.NOT_FOUND,
       });
     },
   ).as('getLoginSchemaType');

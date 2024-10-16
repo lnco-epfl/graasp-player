@@ -2,6 +2,58 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.20.0](https://github.com/graasp/graasp-player/compare/v2.19.0...v2.20.0) (2024-10-03)
+
+
+### Features
+
+* **deps:** update TanStack Query to v5 ([#848](https://github.com/graasp/graasp-player/issues/848)) ([19cd78a](https://github.com/graasp/graasp-player/commit/19cd78a3985f44e2b020f4e334960ba370b99e13))
+
+
+### Bug Fixes
+
+* add enroll page and handle logged in member ([#826](https://github.com/graasp/graasp-player/issues/826)) ([fc928a3](https://github.com/graasp/graasp-player/commit/fc928a349636fd63b189a3f21c33a444ad41e51b))
+* **deps:** update dependency @graasp/ui to v5.2.1 ([#865](https://github.com/graasp/graasp-player/issues/865)) ([2822c03](https://github.com/graasp/graasp-player/commit/2822c03e11c4633705908881aa19c00930d278ef))
+* **deps:** update dependency lucide-react to v0.446.0 ([#858](https://github.com/graasp/graasp-player/issues/858)) ([90c8828](https://github.com/graasp/graasp-player/commit/90c8828695a0f87a0de69df010312077af562e32))
+* **deps:** update dependency lucide-react to v0.447.0 ([#863](https://github.com/graasp/graasp-player/issues/863)) ([8336932](https://github.com/graasp/graasp-player/commit/833693241a77f78ff169a81fa5597aca96c48016))
+* remove usage of `false` in component return ([#861](https://github.com/graasp/graasp-player/issues/861)) ([36d56a3](https://github.com/graasp/graasp-player/commit/36d56a3f6f75bf38744e264827590d264668c472))
+
+## [2.19.0](https://github.com/graasp/graasp-player/compare/v2.18.1...v2.19.0) (2024-09-27)
+
+
+### Features
+
+* use Thumbnails from PackedItem ([#859](https://github.com/graasp/graasp-player/issues/859)) ([6c5c1f3](https://github.com/graasp/graasp-player/commit/6c5c1f34727f65f5ea36b31672714a9b1bb5c04a))
+
+## [2.18.1](https://github.com/graasp/graasp-player/compare/v2.18.0...v2.18.1) (2024-09-23)
+
+
+### Bug Fixes
+
+* **deps:** update dependency date-fns to v4 ([#854](https://github.com/graasp/graasp-player/issues/854)) ([7bd267a](https://github.com/graasp/graasp-player/commit/7bd267a19fdbffd0060e64d42165cf810e9e0faf))
+* eslint@v9 error with vite-plugin-checker ([#855](https://github.com/graasp/graasp-player/issues/855)) ([232ebe9](https://github.com/graasp/graasp-player/commit/232ebe9bec2c545dd244fce1bf0dd6c882df426c))
+* pins should not be inherited ([#849](https://github.com/graasp/graasp-player/issues/849)) ([6b1cbec](https://github.com/graasp/graasp-player/commit/6b1cbecdf4b38371ba9d82f734f985951caeaeb7))
+* update deps ([7d5c98b](https://github.com/graasp/graasp-player/commit/7d5c98b9079671e4cc03bec8b4db6a70669e46a3))
+* update eslint to v9 ([#851](https://github.com/graasp/graasp-player/issues/851)) ([e5ba8e7](https://github.com/graasp/graasp-player/commit/e5ba8e729d770c7ed9211ac88cab97e049a892a2))
+* update for new account ([#857](https://github.com/graasp/graasp-player/issues/857)) ([9bb5287](https://github.com/graasp/graasp-player/commit/9bb528776e4f5ad68355972abdb8af1d0401a11b))
+
+## [2.18.0](https://github.com/graasp/graasp-player/compare/v2.17.0...v2.18.0) (2024-09-12)
+
+
+### Features
+
+* update for item login ([#832](https://github.com/graasp/graasp-player/issues/832)) ([6fb2ecf](https://github.com/graasp/graasp-player/commit/6fb2ecf602d46a570faacb24344f9d23fe1916fc))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @graasp/ui to v4.27.0 ([#842](https://github.com/graasp/graasp-player/issues/842)) ([9dc4cc9](https://github.com/graasp/graasp-player/commit/9dc4cc91cb386a5aa7c0487d23d477ef22247713))
+* **deps:** update dependency @mui/lab to v5.0.0-alpha.173 ([#821](https://github.com/graasp/graasp-player/issues/821)) ([01925f4](https://github.com/graasp/graasp-player/commit/01925f4d61f0aeacf251d2d9893b582216d63422))
+* **deps:** update dependency lucide-react to v0.440.0 ([#843](https://github.com/graasp/graasp-player/issues/843)) ([f5f5436](https://github.com/graasp/graasp-player/commit/f5f5436fb29e7d6f6962870b1adeeeb37f870e8b))
+* **deps:** update dependency stylis to v4.3.3 ([#834](https://github.com/graasp/graasp-player/issues/834)) ([15aa25a](https://github.com/graasp/graasp-player/commit/15aa25a3ec23d011d6f4090571e695a3783a8686))
+* udpate ui ([#825](https://github.com/graasp/graasp-player/issues/825)) ([1344fef](https://github.com/graasp/graasp-player/commit/1344fef750e33d43d307a2c8a83aad6cde0aa99c))
+* update deps ([c0d075a](https://github.com/graasp/graasp-player/commit/c0d075a82fdb72eac450f69850b779c1000ddbe7))
+
 ## [2.17.0](https://github.com/graasp/graasp-player/compare/v2.16.0...v2.17.0) (2024-08-09)
 
 

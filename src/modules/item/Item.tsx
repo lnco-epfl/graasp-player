@@ -7,13 +7,12 @@ import { Alert, Box, Container, Divider, Skeleton, Stack } from '@mui/material';
 
 import { Api } from '@graasp/query-client';
 import {
+  AccountType,
   ActionTriggers,
   AppItemType,
   Context,
-  DiscriminatedItem,
   DocumentItemType,
   EtherpadItemType,
-  FolderItemType,
   H5PItemType,
   ItemType,
   LinkItemType,
@@ -22,7 +21,6 @@ import {
   PermissionLevel,
   S3FileItemType,
   ShortcutItemType,
-  ThumbnailSize,
 } from '@graasp/sdk';
 import { DEFAULT_LANG, FAILURE_MESSAGES } from '@graasp/translations';
 import {
@@ -262,7 +260,12 @@ const AppContent = ({ item }: { item: AppItemType }): JSX.Element => {
       },
     });
   };
-  if (member || isSuccessMember)
+  if (member || isSuccessMember) {
+    const memberLang =
+      member && member?.type === AccountType.Individual
+        ? member.extra?.lang
+        : DEFAULT_LANG;
+
     return (
       <AppItem
         frameId={buildAppId(item.id)}
@@ -275,16 +278,17 @@ const AppContent = ({ item }: { item: AppItemType }): JSX.Element => {
         contextPayload={{
           apiHost: API_HOST,
           settings: item.settings,
-          lang: item.lang || member?.extra?.lang || DEFAULT_LANG,
+          lang: item.lang ?? memberLang,
           permission: PermissionLevel.Read,
           context: Context.Player,
-          memberId: member?.id,
+          accountId: member?.id,
           itemId: item.id,
         }}
         showCollapse={item.settings?.isCollapsible}
         onCollapse={onCollapse}
       />
     );
+  }
 
   if (isLoadingMember) {
     return (
@@ -349,14 +353,11 @@ const ShortcutContent = ({ item }: { item: ShortcutItemType }): JSX.Element => {
   );
 };
 
-const FolderButtonContent = ({ item }: { item: FolderItemType }) => {
+const FolderButtonContent = ({ item }: { item: PackedItem }) => {
   const [searchParams] = useSearchParams();
   const { itemId } = useParams();
   const { data: currentDisplayedItem } = useItem(itemId);
-  const { data: thumbnail } = hooks.useItemThumbnailUrl({
-    id: item.id,
-    size: ThumbnailSize.Medium,
-  });
+  const thumbnail = item.thumbnails?.medium;
 
   const newSearchParams = new URLSearchParams(searchParams.toString());
   newSearchParams.set('from', window.location.pathname);
@@ -383,7 +384,7 @@ const FolderButtonContent = ({ item }: { item: FolderItemType }) => {
 };
 
 type ItemContentProps = {
-  item: DiscriminatedItem;
+  item: PackedItem;
 };
 
 const ItemContent = ({ item }: ItemContentProps) => {
@@ -423,7 +424,11 @@ const ItemContent = ({ item }: ItemContentProps) => {
   }
 };
 
-const ItemContentWrapper = ({ item }: { item: PackedItem }) => {
+export const ItemContentWrapper = ({
+  item,
+}: {
+  item: PackedItem;
+}): JSX.Element | null => {
   // An item the user has access to can be hidden (write, admin) so we hide it in player
   if (item.hidden) {
     return null;
@@ -432,7 +437,7 @@ const ItemContentWrapper = ({ item }: { item: PackedItem }) => {
 };
 
 type FolderContentProps = {
-  item: FolderItemType;
+  item: PackedItem;
   showPinnedOnly?: boolean;
 };
 const FolderContent = ({
@@ -443,10 +448,13 @@ const FolderContent = ({
   const { t: translatePlayer } = usePlayerTranslation();
 
   // this should be fetched only when the item is a folder
-  const { data: children = [], isInitialLoading: isChildrenLoading } =
-    useChildren(item.id, undefined, {
+  const { data: children = [], isLoading: isChildrenLoading } = useChildren(
+    item.id,
+    undefined,
+    {
       getUpdates: true,
-    });
+    },
+  );
 
   const {
     data: childrenPaginated,
@@ -530,9 +538,9 @@ const Item = ({
   id,
   isChildren = false,
   showPinnedOnly = false,
-}: Props): JSX.Element | false => {
+}: Props): JSX.Element | null => {
   const { t: translateMessage } = useMessagesTranslation();
-  const { data: item, isInitialLoading: isLoadingItem, isError } = useItem(id);
+  const { data: item, isLoading: isLoadingItem, isError } = useItem(id);
   const title = usePageTitle();
   if (item && item.type === ItemType.FOLDER) {
     if (isChildren) {
@@ -552,7 +560,7 @@ const Item = ({
   if (isLoadingItem) {
     return (
       <ItemSkeleton
-        itemType={item?.type ?? ItemType.FOLDER}
+        itemType={ItemType.FOLDER}
         isChildren={isChildren}
         screenMaxHeight={SCREEN_MAX_HEIGHT}
       />
@@ -579,7 +587,7 @@ const Item = ({
       </Alert>
     );
   }
-  return false;
+  return null;
 };
 
 export default Item;
