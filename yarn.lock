@@ -1128,7 +1128,7 @@ __metadata:
 
 "@graasp/ui@https://github.com/lnco-epfl/graasp-ui#1-layout-changes":
   version: 5.3.0
-  resolution: "@graasp/ui@https://github.com/lnco-epfl/graasp-ui.git#commit=ebf4b89d7018c784d4dfaa1784b0853bdacbeae6"
+  resolution: "@graasp/ui@https://github.com/lnco-epfl/graasp-ui.git#commit=0ffa55318396754f1bc3649091187a839d1a9e68"
   dependencies:
     http-status-codes: "npm:2.3.0"
     interweave: "npm:13.1.0"
