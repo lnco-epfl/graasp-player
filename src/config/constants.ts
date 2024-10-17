@@ -10,7 +10,6 @@ import {
   GRAASP_ANALYTICS_HOST,
   GRAASP_ASSETS_URL,
   GRAASP_BUILDER_HOST,
-  GRAASP_LIBRARY_HOST,
 } from '@/config/env';
 
 export const APP_NAME = 'Graasp';
@@ -35,7 +34,6 @@ export const SIGN_IN_PATH = buildSignInPath({ host: AUTHENTICATION_HOST });
 
 export const HOST_MAP = {
   [Context.Builder]: GRAASP_BUILDER_HOST,
-  [Context.Library]: GRAASP_LIBRARY_HOST,
   [Context.Analytics]: GRAASP_ANALYTICS_HOST,
   [Context.Player]: '/',
 };
