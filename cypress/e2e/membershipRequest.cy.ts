@@ -6,7 +6,7 @@ import {
 import { buildContentPagePath } from '@/config/paths';
 import {
   FORBIDDEN_CONTENT_ID,
-  REQUEST_MEMBERSHIP_BUTTON_ID, // REQUEST_MEMBERSHIP_BUTTON_ID,
+  REQUEST_MEMBERSHIP_BUTTON_ID,
 } from '@/config/selectors';
 import { ID_FORMAT } from '@/utils/item';
 
