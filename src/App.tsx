@@ -21,7 +21,12 @@ import {
 } from '@graasp/ui';
 
 import { AUTHENTICATION_HOST, DOMAIN } from '@/config/env';
-import { HOME_PATH, buildContentPagePath, buildMainPath } from '@/config/paths';
+import {
+  AUTO_LOGIN_PATH,
+  HOME_PATH,
+  buildContentPagePath,
+  buildMainPath,
+} from '@/config/paths';
 import { useCurrentMemberContext } from '@/contexts/CurrentMemberContext';
 import HomePage from '@/modules/pages/HomePage';
 import ItemPage from '@/modules/pages/itemPage/ItemPage';
@@ -31,6 +36,7 @@ import { mutations } from './config/queryClient';
 import { PREVENT_GUEST_MESSAGE_ID } from './config/selectors';
 import { PLAYER } from './langs/constants';
 import PageWrapper from './modules/layout/PageWrapper';
+import { AutoLogin } from './modules/pages/AutoLogin';
 
 const RedirectToRootContentPage = () => {
   const { rootId } = useParams();
@@ -91,7 +97,10 @@ export const App = (): JSX.Element => {
       <Route element={<PageWrapper fullscreen={fullscreen} />}>
         <Route path={buildMainPath()}>
           <Route index element={<RedirectToRootContentPage />} />
-          <Route path=":itemId" element={<ItemPage />} />
+          <Route path=":itemId">
+            <Route index element={<ItemPage />} />
+            <Route path={AUTO_LOGIN_PATH} element={<AutoLogin />} />
+          </Route>
         </Route>
         <Route
           element={
