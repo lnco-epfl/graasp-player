@@ -63,6 +63,7 @@ const ItemPage = (): JSX.Element | null => {
       isLoading={
         isLoadingMember || isItemLoading || isLoadingItemLoginSchemaType
       }
+      itemErrorStatusCode={null}
     >
       <MainScreen />
       <PlayerCookiesBanner />

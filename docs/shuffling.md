@@ -1,6 +1,6 @@
 # Shuffling
 
-Shuffling is a hidden feature only available when adding a query parameter to the URL of the Graasp Player interface.
+Shuffling is a hidden feature only available when adding a query parameter to the URL of the LNCO.ai Player interface.
 In this document, we describe how shuffling works.
 
 ## Query Parameter

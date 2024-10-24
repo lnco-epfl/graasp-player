@@ -10,8 +10,6 @@ export default defineConfig({
   env: {
     GRAASP_BUILDER_HOST:
       process.env.VITE_GRAASP_BUILDER_HOST || 'http://localhost:3111',
-    GRAASP_LIBRARY_HOST:
-      process.env.VITE_GRAASP_LIBRARY_HOST || 'http://localhost:3005',
     GRAASP_ANALYTICS_HOST:
       process.env.VITE_GRAASP_ANALYTICS_HOST || 'http://localhost:3012',
     GRAASP_API_HOST:
