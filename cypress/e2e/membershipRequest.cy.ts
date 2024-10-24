@@ -1,5 +1,5 @@
 import {
-  CompleteMembershipRequest, // CompleteMembershipRequest,
+  CompleteMembershipRequest,
   PackedFolderItemFactory,
 } from '@graasp/sdk';
 
