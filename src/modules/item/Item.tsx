@@ -12,8 +12,6 @@ import {
   AppItemType,
   Context,
   DocumentItemType,
-  EtherpadItemType,
-  H5PItemType,
   ItemType,
   LinkItemType,
   LocalFileItemType,
@@ -26,10 +24,8 @@ import { DEFAULT_LANG, FAILURE_MESSAGES } from '@graasp/translations';
 import {
   AppItem,
   Button,
-  EtherpadItem,
   FileItem,
   FolderCard,
-  H5PItem,
   ItemSkeleton,
   LinkItem,
   TextDisplay,
@@ -42,7 +38,7 @@ import {
   PDF_VIEWER_LINK,
   SCREEN_MAX_HEIGHT,
 } from '@/config/constants';
-import { API_HOST, H5P_INTEGRATION_URL } from '@/config/env';
+import { API_HOST } from '@/config/env';
 import { useMessagesTranslation, usePlayerTranslation } from '@/config/i18n';
 import { buildContentPagePath } from '@/config/paths';
 import { axios, hooks, mutations } from '@/config/queryClient';
@@ -63,60 +59,7 @@ import FromShortcutButton from './FromShortcutButton';
 import SectionHeader from './SectionHeader';
 import usePageTitle from './usePageTitle';
 
-const {
-  useEtherpad,
-  useItem,
-  useChildren,
-  useFileContentUrl,
-  useChildrenPaginated,
-} = hooks;
-
-type EtherpadContentProps = {
-  item: EtherpadItemType;
-};
-const EtherpadContent = ({ item }: EtherpadContentProps) => {
-  const { t: translateMessage } = useMessagesTranslation();
-  // get etherpad url if type is etherpad
-  const etherpadQuery = useEtherpad(item, 'read');
-
-  if (etherpadQuery?.isLoading) {
-    return (
-      <ItemSkeleton
-        itemType={item.type}
-        isChildren={false}
-        screenMaxHeight={SCREEN_MAX_HEIGHT}
-      />
-    );
-  }
-
-  if (etherpadQuery?.isError) {
-    return (
-      <Alert severity="error">
-        {translateMessage(FAILURE_MESSAGES.UNEXPECTED_ERROR)}
-      </Alert>
-    );
-  }
-  if (!etherpadQuery?.data?.padUrl) {
-    return (
-      <Alert severity="error">
-        {translateMessage(FAILURE_MESSAGES.UNEXPECTED_ERROR)}
-      </Alert>
-    );
-  }
-  return (
-    <EtherpadItem
-      itemId={item.id}
-      padUrl={etherpadQuery.data.padUrl}
-      options={{
-        showLineNumbers: false,
-        showControls: false,
-        showChat: false,
-        noColors: true,
-      }}
-      style={{ height: '80vh' }}
-    />
-  );
-};
+const { useItem, useChildren, useFileContentUrl, useChildrenPaginated } = hooks;
 
 type FileContentProps = {
   item: S3FileItemType | LocalFileItemType;
@@ -300,39 +243,6 @@ const AppContent = ({ item }: { item: AppItemType }): JSX.Element => {
   );
 };
 
-const H5PContent = ({ item }: { item: H5PItemType }): JSX.Element => {
-  const { t: translateMessage } = useMessagesTranslation();
-  const { mutate: triggerAction } = mutations.usePostItemAction();
-
-  const contentId = item?.extra?.h5p?.contentId;
-  if (!contentId) {
-    return (
-      <Alert severity="error">
-        {translateMessage(FAILURE_MESSAGES.UNEXPECTED_ERROR)}
-      </Alert>
-    );
-  }
-  const onCollapse = (c: boolean) => {
-    triggerAction({
-      itemId: item.id,
-      payload: {
-        type: c ? ActionTriggers.CollapseItem : ActionTriggers.UnCollapseItem,
-      },
-    });
-  };
-
-  return (
-    <H5PItem
-      itemId={item.id}
-      itemName={item.name}
-      contentId={contentId}
-      integrationUrl={H5P_INTEGRATION_URL}
-      showCollapse={item.settings?.isCollapsible}
-      onCollapse={onCollapse}
-    />
-  );
-};
-
 const ShortcutContent = ({ item }: { item: ShortcutItemType }): JSX.Element => {
   if (item.settings.isCollapsible) {
     return (
@@ -401,14 +311,6 @@ const ItemContent = ({ item }: ItemContentProps) => {
     }
     case ItemType.APP: {
       return <AppContent item={item} />;
-    }
-
-    case ItemType.H5P: {
-      return <H5PContent item={item} />;
-    }
-
-    case ItemType.ETHERPAD: {
-      return <EtherpadContent item={item} />;
     }
 
     case ItemType.SHORTCUT: {
