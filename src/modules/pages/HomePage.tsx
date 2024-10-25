@@ -87,7 +87,7 @@ const HomePage = (): JSX.Element => {
           <Typography variant="h4" component="h1" mb={1}>
             {t(PLAYER.RECENT_ITEMS_TITLE)}
           </Typography>
-          <Grid container spacing={3} justifyItems="center">
+          <Grid container spacing={3} justifyContent="center">
             <DisplayItems items={accessibleItems?.data} isLoading={isLoading} />
           </Grid>
         </Stack>
