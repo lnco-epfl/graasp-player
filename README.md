@@ -1,4 +1,4 @@
-# Graasp Player
+# LNCO.ai Player
 
 [![gitlocalized](https://gitlocalize.com/repo/9233/whole_project/badge.svg)](https://gitlocalize.com/repo/9233?utm_source=badge)
 
@@ -8,17 +8,17 @@
 2. Run [the API](https://github.com/graasp/graasp) at [`http://localhost:3000`](http://localhost:3000)
 3. Set the following environnement variables in `.env.development`
 
-    ```sh
-    VITE_PORT=3112
-    VITE_GRAASP_API_HOST=http://localhost:3000
-    VITE_GRAASP_AUTH_HOST=http://localhost:3001
-    VITE_GRAASP_BUILDER_HOST=http://localhost:3111
-    VITE_GRAASP_LIBRARY_HOST=http://localhost:3005
-    VITE_GRAASP_ANALYTICS_HOST=http://localhost:3113
-    VITE_SENTRY_ENV=development
-    VITE_SHOW_NOTIFICATIONS=true
-    VITE_H5P_INTEGRATION_URL=
-    ```
+   ```sh
+   VITE_PORT=3112
+   VITE_GRAASP_API_HOST=http://localhost:3000
+   VITE_GRAASP_AUTH_HOST=http://localhost:3001
+   VITE_GRAASP_BUILDER_HOST=http://localhost:3111
+   VITE_GRAASP_LIBRARY_HOST=http://localhost:3005
+   VITE_GRAASP_ANALYTICS_HOST=http://localhost:3113
+   VITE_SENTRY_ENV=development
+   VITE_SHOW_NOTIFICATIONS=true
+   VITE_H5P_INTEGRATION_URL=
+   ```
 
 4. Run `yarn start`. The client should be accessible at [`http://localhost:3112`](http://localhost:3112)
 
