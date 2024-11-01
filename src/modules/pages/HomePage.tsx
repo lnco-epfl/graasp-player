@@ -4,7 +4,6 @@ import { Helmet } from 'react-helmet';
 import {
   Alert,
   Grid2 as Grid,
-  Grid2 as Grid,
   Pagination,
   PaginationItem,
   Stack,
@@ -90,7 +89,6 @@ const HomePage = (): JSX.Element => {
           </Typography>
           <Grid container spacing={3} justifyItems="center">
             <DisplayItems items={accessibleItems?.data} isLoading={isLoading} />
-          </Grid>
           </Grid>
         </Stack>
         <Pagination
