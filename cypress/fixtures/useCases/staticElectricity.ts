@@ -2,8 +2,8 @@ import {
   AppItemFactory,
   DocumentItemFactory,
   FolderItemFactory,
-  ItemTagType,
   ItemType,
+  ItemVisibilityType,
   LinkItemFactory,
   LocalFileItemFactory,
   buildDocumentExtra,
@@ -253,10 +253,9 @@ PUBLIC_STATIC_ELECTRICITY.items = PUBLIC_STATIC_ELECTRICITY.items.map(
   (item) => {
     const newItem = {
       ...item,
-      public: mockItemTag({ type: ItemTagType.Public }),
+      public: mockItemTag({ type: ItemVisibilityType.Public }),
     };
     return newItem;
   },
 );
 PUBLIC_STATIC_ELECTRICITY.items[0].name = 'public static electricity';
-PUBLIC_STATIC_ELECTRICITY.items[0].displayName = 'public static electricity';
