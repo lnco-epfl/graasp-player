@@ -1,3 +1,9 @@
+> [!WARNING]
+> This Project has been archived. You can find all the up-to-date code in https://github.com/graasp/client
+>
+> This was archived on Nov 28 2024.
+
+
 # Graasp Player
 
 [![gitlocalized](https://gitlocalize.com/repo/9233/whole_project/badge.svg)](https://gitlocalize.com/repo/9233?utm_source=badge)
