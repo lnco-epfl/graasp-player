@@ -94,7 +94,7 @@ const PageWrapper = ({ fullscreen }: PageWrapperProps): JSX.Element => {
           accentColor="#000000"
         />
       }
-      headerLeftContent={<Typography noWrap>{item?.displayName}</Typography>}
+      headerLeftContent={<Typography noWrap>{item?.name}</Typography>}
       headerRightContent={<UserSwitchWrapper />}
     >
       <Outlet />
