@@ -1,15 +1,27 @@
 type CalibrationData = {
   scale?: number;
-  fontSize?: Record<string, unknown>;
+  fontSize?: CalibrationFontSize;
   timestamp: number;
   memberId?: string;
   calibrationAppId?: string;
 };
 
+export type CalibrationFontSize =
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'extra-large';
+
+const calibrationFontSizeValues: CalibrationFontSize[] = [
+  'small',
+  'medium',
+  'large',
+  'extra-large',
+];
+
 const buildCalibrationKey = (): string => `lnco_screen_calibration`;
 
 export const saveCalibrationScale = (
-  rootId: string,
   scale: number,
   metadata?: Pick<CalibrationData, 'memberId' | 'calibrationAppId'>,
 ): void => {
@@ -23,7 +35,7 @@ export const saveCalibrationScale = (
 };
 
 export const saveCalibrationFontSize = (
-  fontSize: Record<string, unknown>,
+  fontSize: CalibrationFontSize,
   metadata?: Pick<CalibrationData, 'memberId' | 'calibrationAppId'>,
 ): void => {
   const data: CalibrationData = {
@@ -50,7 +62,7 @@ export const getCalibrationScale = (): number | null => {
   }
 };
 
-export const getCalibrationFontSize = (): Record<string, unknown> | null => {
+export const getCalibrationFontSize = (): CalibrationFontSize | null => {
   const stored = localStorage.getItem(buildCalibrationKey());
 
   if (!stored) {
@@ -60,7 +72,10 @@ export const getCalibrationFontSize = (): Record<string, unknown> | null => {
   try {
     const parsed = JSON.parse(stored) as CalibrationData;
 
-    if (parsed.fontSize && typeof parsed.fontSize === 'string') {
+    if (
+      typeof parsed.fontSize === 'string' &&
+      calibrationFontSizeValues.includes(parsed.fontSize as CalibrationFontSize)
+    ) {
       return parsed.fontSize;
     }
     return null;

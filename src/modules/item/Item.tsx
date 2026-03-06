@@ -229,7 +229,7 @@ const AppContent = ({ item }: { item: AppItemType }): JSX.Element => {
           context: Context.Player,
           accountId: member?.id,
           itemId: item.id,
-          ...(scale !== null ? { scale, calibrationScale: scale } : {}),
+          ...(scale !== null ? { scale } : {}),
           ...(fontSize ? { fontSize } : {}),
         }}
         showCollapse={item.settings?.isCollapsible}
