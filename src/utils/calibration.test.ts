@@ -61,12 +61,14 @@ describe('calibration utils', () => {
     expect(getCalibrationScale()).to.equal(1.25);
 
     const parsed = JSON.parse(stored as string) as {
-      scale: number;
+      screenCalibration: {
+        scale: number;
+      };
       timestamp: number;
       memberId: string;
       calibrationAppId: string;
     };
-    expect(parsed.scale).to.equal(1.25);
+    expect(parsed.screenCalibration.scale).to.equal(1.25);
     expect(parsed.memberId).to.equal('member-1');
     expect(parsed.calibrationAppId).to.equal('app-1');
     expect(parsed.timestamp).to.be.a('number');
@@ -78,7 +80,10 @@ describe('calibration utils', () => {
     localStorage.setItem(calibrationKey, '{broken-json');
     expect(getCalibrationScale()).to.equal(null);
 
-    localStorage.setItem(calibrationKey, JSON.stringify({ scale: '1.5' }));
+    localStorage.setItem(
+      calibrationKey,
+      JSON.stringify({ screenCalibration: { scale: '1.5' } }),
+    );
     expect(getCalibrationScale()).to.equal(null);
   });
 
@@ -94,12 +99,14 @@ describe('calibration utils', () => {
 
     const stored = localStorage.getItem(calibrationKey);
     const parsed = JSON.parse(stored as string) as {
-      fontSize: CalibrationFontSize;
+      screenCalibration: {
+        fontSize: CalibrationFontSize;
+      };
       timestamp: number;
       memberId: string;
       calibrationAppId: string;
     };
-    expect(parsed.fontSize).to.deep.equal(fontSize);
+    expect(parsed.screenCalibration.fontSize).to.deep.equal(fontSize);
     expect(parsed.memberId).to.equal('member-1');
     expect(parsed.calibrationAppId).to.equal('app-1');
     expect(parsed.timestamp).to.be.a('number');
@@ -111,7 +118,10 @@ describe('calibration utils', () => {
     localStorage.setItem(calibrationKey, '{broken-json');
     expect(getCalibrationFontSize()).to.equal(null);
 
-    localStorage.setItem(calibrationKey, JSON.stringify({ fontSize: 'xxl' }));
+    localStorage.setItem(
+      calibrationKey,
+      JSON.stringify({ screenCalibration: { fontSize: 'xxl' } }),
+    );
     expect(getCalibrationFontSize()).to.equal(null);
   });
 

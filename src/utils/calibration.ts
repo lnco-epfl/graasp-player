@@ -1,16 +1,20 @@
 type CalibrationData = {
-  scale?: number;
-  fontSize?: CalibrationFontSize;
+  screenCalibration?: ScreenCalibration;
   timestamp: number;
   memberId?: string;
   calibrationAppId?: string;
 };
 
-export type CalibrationFontSize = 'small' | 'medium' | 'large' | 'extra-large';
+export type CalibrationFontSize = 'small' | 'normal' | 'large' | 'extra-large';
+
+type ScreenCalibration = {
+  scale?: number;
+  fontSize?: CalibrationFontSize;
+};
 
 const calibrationFontSizeValues: CalibrationFontSize[] = [
   'small',
-  'medium',
+  'normal',
   'large',
   'extra-large',
 ];
@@ -22,7 +26,7 @@ export const saveCalibrationScale = (
   metadata?: Pick<CalibrationData, 'memberId' | 'calibrationAppId'>,
 ): void => {
   const data: CalibrationData = {
-    scale,
+    screenCalibration: { scale },
     timestamp: Date.now(),
     ...metadata,
   };
@@ -35,7 +39,7 @@ export const saveCalibrationFontSize = (
   metadata?: Pick<CalibrationData, 'memberId' | 'calibrationAppId'>,
 ): void => {
   const data: CalibrationData = {
-    fontSize,
+    screenCalibration: { fontSize },
     timestamp: Date.now(),
     ...metadata,
   };
@@ -52,7 +56,9 @@ export const getCalibrationScale = (): number | null => {
 
   try {
     const parsed = JSON.parse(stored) as CalibrationData;
-    return typeof parsed.scale === 'number' ? parsed.scale : null;
+    return typeof parsed.screenCalibration?.scale === 'number'
+      ? parsed.screenCalibration.scale
+      : null;
   } catch {
     return null;
   }
@@ -67,12 +73,13 @@ export const getCalibrationFontSize = (): CalibrationFontSize | null => {
 
   try {
     const parsed = JSON.parse(stored) as CalibrationData;
+    const fontSize = parsed.screenCalibration?.fontSize;
 
     if (
-      typeof parsed.fontSize === 'string' &&
-      calibrationFontSizeValues.includes(parsed.fontSize as CalibrationFontSize)
+      typeof fontSize === 'string' &&
+      calibrationFontSizeValues.includes(fontSize as CalibrationFontSize)
     ) {
-      return parsed.fontSize;
+      return fontSize;
     }
     return null;
   } catch {
