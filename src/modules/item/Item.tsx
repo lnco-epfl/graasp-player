@@ -1,5 +1,5 @@
 import { Fragment, useCallback, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { useInView } from 'react-intersection-observer';
 import { useParams, useSearchParams } from 'react-router-dom';
 
@@ -52,6 +52,10 @@ import {
 } from '@/config/selectors';
 import { useCurrentMemberContext } from '@/contexts/CurrentMemberContext';
 import { PLAYER } from '@/langs/constants';
+import {
+  getCalibrationFontSize,
+  getCalibrationScale,
+} from '@/utils/calibration';
 import { paginationContentFilter } from '@/utils/item';
 
 import NavigationIsland from '../navigationIsland/NavigationIsland';
@@ -205,6 +209,8 @@ const AppContent = ({ item }: { item: AppItemType }): JSX.Element => {
       member && member?.type === AccountType.Individual
         ? member.extra?.lang
         : DEFAULT_LANG;
+    const scale = getCalibrationScale() ?? null;
+    const fontSize = getCalibrationFontSize() ?? null;
 
     return (
       <AppItem
@@ -223,6 +229,8 @@ const AppContent = ({ item }: { item: AppItemType }): JSX.Element => {
           context: Context.Player,
           accountId: member?.id,
           itemId: item.id,
+          ...(scale !== null ? { scale, calibrationScale: scale } : {}),
+          ...(fontSize ? { fontSize } : {}),
         }}
         showCollapse={item.settings?.isCollapsible}
         onCollapse={onCollapse}
