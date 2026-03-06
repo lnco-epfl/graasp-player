@@ -6,11 +6,7 @@ type CalibrationData = {
   calibrationAppId?: string;
 };
 
-export type CalibrationFontSize =
-  | 'small'
-  | 'medium'
-  | 'large'
-  | 'extra-large';
+export type CalibrationFontSize = 'small' | 'medium' | 'large' | 'extra-large';
 
 const calibrationFontSizeValues: CalibrationFontSize[] = [
   'small',
