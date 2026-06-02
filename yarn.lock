@@ -1157,7 +1157,7 @@ __metadata:
 
 "@graasp/ui@https://github.com/lnco-epfl/graasp-ui.git":
   version: 5.4.7
-  resolution: "@graasp/ui@https://github.com/lnco-epfl/graasp-ui.git#commit=962f19b8751541fc77d9fc71185dc51956212cab"
+  resolution: "@graasp/ui@https://github.com/lnco-epfl/graasp-ui.git#commit=85fb8e63905e1531350eb5c27187cf15070e1692"
   dependencies:
     http-status-codes: "npm:2.3.0"
     interweave: "npm:13.1.0"
@@ -1186,7 +1186,7 @@ __metadata:
     react-i18next: ^15.0.0
     react-router-dom: ^6.11.0
     stylis: ^4.1.3
-  checksum: 10/9833c0cdb7a6bd84a8ec1dd02d55b0b6334c0750dda7e8fd69590dc029ce58787e5500694fd097f6a5da00393a80f06be9d23a097b9f50720f073f8ab9ee935a
+  checksum: 10/6d4ed0488927f9a98290d8ec4cc0e061379b6b85f1ecf54bfbd479428d631889f24c5b3e505c4eddf71b3c2c1328c85c17e2b5fb4b8c6445ebe4590ebce8c442
   languageName: node
   linkType: hard
 
