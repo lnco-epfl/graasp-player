@@ -1,5 +1,6 @@
 import setupCoverage from '@cypress/code-coverage/task.js';
 import { defineConfig } from 'cypress';
+import vitePreprocessor from 'cypress-vite';
 
 export default defineConfig({
   chromeWebSecurity: false,
@@ -22,6 +23,7 @@ export default defineConfig({
   e2e: {
     baseUrl: `http://localhost:${process.env.VITE_PORT || 3112}`,
     setupNodeEvents(on, config) {
+      on('file:preprocessor', vitePreprocessor());
       setupCoverage(on, config);
       return config;
     },
