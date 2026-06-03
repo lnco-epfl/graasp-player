@@ -23,7 +23,7 @@ export default defineConfig({
   e2e: {
     baseUrl: `http://localhost:${process.env.VITE_PORT || 3112}`,
     setupNodeEvents(on, config) {
-      on('file:preprocessor', vitePreprocessor());
+      on('file:preprocessor', vitePreprocessor({ mode: 'test' }));
       setupCoverage(on, config);
       return config;
     },
