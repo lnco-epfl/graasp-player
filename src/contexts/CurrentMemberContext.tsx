@@ -1,7 +1,8 @@
 import { createContext, useContext, useEffect } from 'react';
 
-import { AccountType } from '@graasp/sdk';
 import { DEFAULT_LANG } from '@graasp/translations';
+
+import { AccountType } from '@lnco-ai/sdk';
 
 import i18n from '@/config/i18n';
 import { hooks } from '@/config/queryClient';

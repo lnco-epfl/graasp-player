@@ -1,4 +1,4 @@
-import { Member, MemberFactory } from '@graasp/sdk';
+import { Member, MemberFactory } from '@lnco-ai/sdk';
 
 export const MEMBERS: { [key: string]: Member } = {
   ANNA: MemberFactory({

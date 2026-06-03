@@ -2,7 +2,7 @@ import {
   FolderItemFactory,
   LinkItemFactory,
   PermissionLevel,
-} from '@graasp/sdk';
+} from '@lnco-ai/sdk';
 
 import { buildContentPagePath, buildMainPath } from '@/config/paths';
 import {

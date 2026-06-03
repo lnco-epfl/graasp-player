@@ -1,4 +1,4 @@
-import { AppItemFactory, AppItemType, ItemType } from '@graasp/sdk';
+import { AppItemFactory, AppItemType, ItemType } from '@lnco-ai/sdk';
 
 import { API_HOST } from '../support/env';
 import { APP_NAME } from './apps/apps';

@@ -1,7 +1,6 @@
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 
-import { DiscriminatedItem, ItemType } from '@graasp/sdk';
-
+import { DiscriminatedItem, ItemType } from '@lnco-ai/sdk';
 import isArray from 'lodash.isarray';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 

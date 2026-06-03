@@ -58,6 +58,8 @@ export default ({ mode }: { mode: string }): UserConfigExport => {
     resolve: {
       alias: {
         '@': resolve(__dirname, 'src'),
+        '@graasp/sdk': '@lnco-ai/sdk',
+        '@graasp/ui': '@lnco-ai/ui',
       },
     },
   });

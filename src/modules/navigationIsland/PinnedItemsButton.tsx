@@ -2,8 +2,7 @@ import { useParams } from 'react-router-dom';
 
 import { Tooltip } from '@mui/material';
 
-import { PermissionLevel, PermissionLevelCompare } from '@graasp/sdk';
-
+import { PermissionLevel, PermissionLevelCompare } from '@lnco-ai/sdk';
 import { Pin, PinOff } from 'lucide-react';
 
 import { usePlayerTranslation } from '@/config/i18n';

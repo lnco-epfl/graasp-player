@@ -3,7 +3,7 @@ import {
   LinkItemFactory,
   LinkItemType,
   buildLinkExtra,
-} from '@graasp/sdk';
+} from '@lnco-ai/sdk';
 
 import { CURRENT_USER } from './members';
 

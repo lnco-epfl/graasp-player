@@ -1,4 +1,4 @@
-import { buildSignInPath } from '@graasp/sdk';
+import { buildSignInPath } from '@lnco-ai/sdk';
 
 import { HOME_PATH } from '../../src/config/paths';
 import {

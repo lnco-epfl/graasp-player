@@ -1,4 +1,4 @@
-import { API_ROUTES } from '@graasp/query-client';
+import { API_ROUTES } from '@lnco-ai/query-client';
 import {
   ChatMessage,
   HttpMethod,
@@ -9,8 +9,7 @@ import {
   getIdsFromPath,
   isDescendantOf,
   isRootItem,
-} from '@graasp/sdk';
-
+} from '@lnco-ai/sdk';
 import { StatusCodes } from 'http-status-codes';
 
 import { ID_FORMAT } from '../../src/utils/item';

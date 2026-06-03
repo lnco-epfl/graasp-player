@@ -2,6 +2,7 @@ import 'katex/dist/katex.min.css';
 import 'react-quill/dist/quill.snow.css';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { HelmetProvider } from 'react-helmet-async';
 import { I18nextProvider } from 'react-i18next';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -13,8 +14,7 @@ import { ThemeProvider } from '@mui/material/styles';
 // https://mui.com/material-ui/customization/theming/#api
 // and https://mui.com/material-ui/guides/localization/#locale-text
 // with the deepMerge util function
-import { theme } from '@graasp/ui';
-
+import { theme } from '@lnco-ai/ui';
 import { ErrorBoundary } from '@sentry/react';
 
 import { SHOW_NOTIFICATIONS } from '@/config/env';
@@ -40,27 +40,29 @@ const globalStyles = (
 );
 
 const Root = (): JSX.Element => (
-  <QueryClientProvider client={queryClient}>
-    <I18nextProvider i18n={i18n}>
-      {SHOW_NOTIFICATIONS && (
-        <ToastContainer stacked position="bottom-right" theme="colored" />
+  <HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <I18nextProvider i18n={i18n}>
+        {SHOW_NOTIFICATIONS && (
+          <ToastContainer stacked position="bottom-right" theme="colored" />
+        )}
+        {globalStyles}
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Router>
+            <ErrorBoundary fallback={<FallbackComponent />}>
+              <CurrentMemberContextProvider>
+                <App />
+              </CurrentMemberContextProvider>
+            </ErrorBoundary>
+          </Router>
+        </ThemeProvider>
+      </I18nextProvider>
+      {import.meta.env.DEV && import.meta.env.MODE !== 'test' && (
+        <ReactQueryDevtools />
       )}
-      {globalStyles}
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Router>
-          <ErrorBoundary fallback={<FallbackComponent />}>
-            <CurrentMemberContextProvider>
-              <App />
-            </CurrentMemberContextProvider>
-          </ErrorBoundary>
-        </Router>
-      </ThemeProvider>
-    </I18nextProvider>
-    {import.meta.env.DEV && import.meta.env.MODE !== 'test' && (
-      <ReactQueryDevtools />
-    )}
-  </QueryClientProvider>
+    </QueryClientProvider>
+  </HelmetProvider>
 );
 
 export default Root;

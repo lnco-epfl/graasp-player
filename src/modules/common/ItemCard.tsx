@@ -6,7 +6,7 @@ import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
-import { PackedItem, formatDate } from '@graasp/sdk';
+import { PackedItem, formatDate } from '@lnco-ai/sdk';
 
 import { usePlayerTranslation } from '@/config/i18n';
 

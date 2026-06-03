@@ -1,7 +1,7 @@
 import { Stack, Typography } from '@mui/material';
 
-import { PackedItem, formatDate } from '@graasp/sdk';
-import { TextDisplay, Thumbnail } from '@graasp/ui';
+import { PackedItem, formatDate } from '@lnco-ai/sdk';
+import { TextDisplay, Thumbnail } from '@lnco-ai/ui';
 
 import { usePlayerTranslation } from '@/config/i18n';
 import { FOLDER_NAME_TITLE_CLASS } from '@/config/selectors';

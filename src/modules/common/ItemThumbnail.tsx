@@ -3,8 +3,8 @@ import {
   ThumbnailSize,
   ThumbnailsBySize,
   getMimetype,
-} from '@graasp/sdk';
-import { ItemIcon } from '@graasp/ui';
+} from '@lnco-ai/sdk';
+import { ItemIcon } from '@lnco-ai/ui';
 
 type Props = {
   item: PackedItem;

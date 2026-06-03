@@ -8,7 +8,7 @@ import {
   useState,
 } from 'react';
 
-import { useMobileView } from '@graasp/ui';
+import { useMobileView } from '@lnco-ai/ui';
 
 type LayoutContextType = {
   isPinnedOpen: boolean;

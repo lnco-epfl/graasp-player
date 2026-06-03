@@ -1,7 +1,6 @@
 import { Stack, Typography } from '@mui/material';
 
-import { Button } from '@graasp/ui';
-
+import { Button } from '@lnco-ai/ui';
 import { CircleUser } from 'lucide-react';
 
 import { usePlayerTranslation } from '@/config/i18n';

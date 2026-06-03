@@ -6,8 +6,8 @@ import ExitFullscreenIcon from '@mui/icons-material/FullscreenExit';
 import { Stack, Tooltip, styled } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 
-import { DiscriminatedItem } from '@graasp/sdk';
-import { useMobileView } from '@graasp/ui';
+import { DiscriminatedItem } from '@lnco-ai/sdk';
+import { useMobileView } from '@lnco-ai/ui';
 
 import { usePlayerTranslation } from '@/config/i18n';
 import { hooks } from '@/config/queryClient';

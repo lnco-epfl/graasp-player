@@ -9,7 +9,7 @@ import {
   buildDocumentExtra,
   buildFileExtra,
   buildLinkExtra,
-} from '@graasp/sdk';
+} from '@lnco-ai/sdk';
 
 import { MOCK_IMAGE_URL } from '../fileLinks';
 import { CURRENT_USER } from '../members';

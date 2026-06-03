@@ -4,7 +4,7 @@ import {
   ItemType,
   PermissionLevel,
   buildDocumentExtra,
-} from '@graasp/sdk';
+} from '@lnco-ai/sdk';
 
 import { CURRENT_USER, MEMBERS } from './members';
 import { MockItem } from './mockTypes';

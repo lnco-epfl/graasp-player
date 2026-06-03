@@ -8,8 +8,8 @@ import {
 
 import { Alert, Stack, Typography } from '@mui/material';
 
-import { ItemLoginSchemaType } from '@graasp/sdk';
-import { Button } from '@graasp/ui';
+import { ItemLoginSchemaType } from '@lnco-ai/sdk';
+import { Button } from '@lnco-ai/ui';
 
 import { usePlayerTranslation } from '@/config/i18n';
 import { HOME_PATH, buildContentPagePath } from '@/config/paths';

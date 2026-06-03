@@ -1,4 +1,4 @@
-import { FolderItemFactory, ItemLoginSchemaType } from '@graasp/sdk';
+import { FolderItemFactory, ItemLoginSchemaType } from '@lnco-ai/sdk';
 
 import { buildContentPagePath } from '@/config/paths';
 import {

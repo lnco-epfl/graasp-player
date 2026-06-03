@@ -1,6 +1,7 @@
 import { Chatbox as GraaspChatbox } from '@graasp/chatbox';
-import { DiscriminatedItem } from '@graasp/sdk';
-import { Loader } from '@graasp/ui';
+
+import { DiscriminatedItem } from '@lnco-ai/sdk';
+import { Loader } from '@lnco-ai/ui';
 
 import { hooks, mutations } from '@/config/queryClient';
 import { useCurrentMemberContext } from '@/contexts/CurrentMemberContext';

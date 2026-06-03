@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(yarn list *)",
+      "Bash(yarn info *)",
+      "Bash(yarn --version)",
+      "Read(//c/Users/mijsters/Documents/LNCOai/Platform/**)",
+      "Read(//c/Users/mijsters/Documents/LNCOai/**)",
+      "Bash(powershell -Command 'Get-ChildItem -Recurse -Path '\\\\''c:/Users/mijsters/Documents/LNCOai/Platform/Player/src'\\\\'' -Include *.ts,*.tsx | ForEach-Object { \\(Get-Content $_.FullName -Raw\\) -replace '\\\\''@graasp/ui/text-editor'\\\\'','\\\\''@lnco-ai/ui/text-editor'\\\\'' -replace '\\\\''@graasp/ui'\\\\'','\\\\''@lnco-ai/ui'\\\\'' -replace '\\\\''@graasp/sdk'\\\\'','\\\\''@lnco-ai/sdk'\\\\'' | Set-Content $_.FullName -NoNewline }')",
+      "Bash(powershell -Command 'Get-ChildItem -Recurse -Path '\\\\''c:/Users/mijsters/Documents/LNCOai/Platform/Player/cypress'\\\\'' -Include *.ts,*.tsx | ForEach-Object { \\(Get-Content $_.FullName -Raw\\) -replace '\\\\''@graasp/ui'\\\\'','\\\\''@lnco-ai/ui'\\\\'' -replace '\\\\''@graasp/sdk'\\\\'','\\\\''@lnco-ai/sdk'\\\\'' | Set-Content $_.FullName -NoNewline }')",
+      "Bash(yarn install *)",
+      "Bash(yarn build *)",
+      "Bash(git ls-remote *)",
+      "Bash(powershell -Command 'Get-ChildItem -Recurse -Path '\\\\''c:/Users/mijsters/Documents/LNCOai/Platform/Player/src'\\\\'','\\\\''c:/Users/mijsters/Documents/LNCOai/Platform/Player/cypress'\\\\'' -Include *.ts,*.tsx | ForEach-Object { \\(Get-Content $_.FullName -Raw\\) -replace '\\\\''@graasp/query-client'\\\\'','\\\\''@lnco-ai/query-client'\\\\'' | Set-Content $_.FullName -NoNewline }')"
+    ]
+  }
+}

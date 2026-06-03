@@ -3,9 +3,10 @@ import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 
 import { Alert } from '@mui/material';
 
-import { ItemType } from '@graasp/sdk';
 import { FAILURE_MESSAGES } from '@graasp/translations';
-import { MainMenu } from '@graasp/ui';
+
+import { ItemType } from '@lnco-ai/sdk';
+import { MainMenu } from '@lnco-ai/ui';
 
 import { useMessagesTranslation } from '@/config/i18n';
 import { ROOT_ID_PATH, buildContentPagePath } from '@/config/paths';

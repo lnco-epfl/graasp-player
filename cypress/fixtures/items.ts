@@ -1,3 +1,5 @@
+import { DEFAULT_LANG } from '@graasp/translations';
+
 import {
   DocumentItemFactory,
   FolderItemFactory,
@@ -5,9 +7,7 @@ import {
   PermissionLevel,
   ShortcutItemFactory,
   buildPathFromIds,
-} from '@graasp/sdk';
-import { DEFAULT_LANG } from '@graasp/translations';
-
+} from '@lnco-ai/sdk';
 import { v4 } from 'uuid';
 
 import {

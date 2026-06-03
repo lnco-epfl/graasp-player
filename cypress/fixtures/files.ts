@@ -5,7 +5,7 @@ import {
   S3FileItemType,
   buildFileExtra,
   buildS3FileExtra,
-} from '@graasp/sdk';
+} from '@lnco-ai/sdk';
 
 import { MOCK_IMAGE_URL, MOCK_PDF_URL, MOCK_VIDEO_URL } from './fileLinks';
 import { CURRENT_USER } from './members';

@@ -1,6 +1,6 @@
 import { Divider, Drawer, Toolbar, Typography, styled } from '@mui/material';
 
-import { DEFAULT_BACKGROUND_COLOR, DrawerHeader } from '@graasp/ui';
+import { DEFAULT_BACKGROUND_COLOR, DrawerHeader } from '@lnco-ai/ui';
 
 import { DRAWER_WIDTH } from '../../config/constants';
 

@@ -1,6 +1,7 @@
-import { CurrentAccount, ThumbnailSize } from '@graasp/sdk';
 import { COMMON } from '@graasp/translations';
-import { Avatar } from '@graasp/ui';
+
+import { CurrentAccount, ThumbnailSize } from '@lnco-ai/sdk';
+import { Avatar } from '@lnco-ai/ui';
 
 import { AVATAR_ICON_HEIGHT } from '@/config/constants';
 import { useCommonTranslation } from '@/config/i18n';

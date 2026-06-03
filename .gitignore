@@ -47,3 +47,7 @@ vite.config.ts.timestamp-*
 *.sln
 *.sw?
 *.code-workspace
+
+# Claude
+.claude/*
+claude.md

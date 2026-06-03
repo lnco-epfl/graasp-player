@@ -13,12 +13,12 @@ import {
 
 import { Alert, Button, Stack, Typography } from '@mui/material';
 
-import { buildSignInPath, saveUrlForRedirection } from '@graasp/sdk';
+import { buildSignInPath, saveUrlForRedirection } from '@lnco-ai/sdk';
 import {
   CustomInitialLoader,
   PreventGuestWrapper,
   SignedInWrapper,
-} from '@graasp/ui';
+} from '@lnco-ai/ui';
 
 import { AUTHENTICATION_HOST, DOMAIN } from '@/config/env';
 import {

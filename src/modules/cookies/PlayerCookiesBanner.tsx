@@ -1,6 +1,7 @@
-import { CookieKeys } from '@graasp/sdk';
 import { COMMON } from '@graasp/translations';
-import { CookiesBanner } from '@graasp/ui';
+
+import { CookieKeys } from '@lnco-ai/sdk';
+import { CookiesBanner } from '@lnco-ai/ui';
 
 import { DOMAIN } from '@/config/env';
 import { useCommonTranslation } from '@/config/i18n';

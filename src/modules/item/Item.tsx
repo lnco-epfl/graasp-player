@@ -1,11 +1,13 @@
 import { Fragment, useCallback, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { useInView } from 'react-intersection-observer';
 import { useParams, useSearchParams } from 'react-router-dom';
 
 import { Alert, Box, Container, Divider, Skeleton, Stack } from '@mui/material';
 
-import { Api } from '@graasp/query-client';
+import { DEFAULT_LANG, FAILURE_MESSAGES } from '@graasp/translations';
+
+import { Api } from '@lnco-ai/query-client';
 import {
   AccountType,
   ActionTriggers,
@@ -19,8 +21,7 @@ import {
   PermissionLevel,
   S3FileItemType,
   ShortcutItemType,
-} from '@graasp/sdk';
-import { DEFAULT_LANG, FAILURE_MESSAGES } from '@graasp/translations';
+} from '@lnco-ai/sdk';
 import {
   AppItem,
   Button,
@@ -30,8 +31,8 @@ import {
   LinkItem,
   TextDisplay,
   withCollapse,
-} from '@graasp/ui';
-import { DocumentItem } from '@graasp/ui/text-editor';
+} from '@lnco-ai/ui';
+import { DocumentItem } from '@lnco-ai/ui/text-editor';
 
 import {
   DEFAULT_RESIZABLE_SETTING,
@@ -52,6 +53,7 @@ import {
 } from '@/config/selectors';
 import { useCurrentMemberContext } from '@/contexts/CurrentMemberContext';
 import { PLAYER } from '@/langs/constants';
+import { getScreenCalibration } from '@/utils/calibration';
 import { paginationContentFilter } from '@/utils/item';
 
 import NavigationIsland from '../navigationIsland/NavigationIsland';
@@ -205,6 +207,7 @@ const AppContent = ({ item }: { item: AppItemType }): JSX.Element => {
       member && member?.type === AccountType.Individual
         ? member.extra?.lang
         : DEFAULT_LANG;
+    const screenCalibration = getScreenCalibration();
 
     return (
       <AppItem
@@ -223,6 +226,7 @@ const AppContent = ({ item }: { item: AppItemType }): JSX.Element => {
           context: Context.Player,
           accountId: member?.id,
           itemId: item.id,
+          ...(screenCalibration !== null && { screenCalibration }),
         }}
         showCollapse={item.settings?.isCollapsible}
         onCollapse={onCollapse}

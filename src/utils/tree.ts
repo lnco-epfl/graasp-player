@@ -4,7 +4,7 @@ import {
   UnionOfConst,
   getMimetype,
   getParentFromPath,
-} from '@graasp/sdk';
+} from '@lnco-ai/sdk';
 
 type ItemIdToDirectChildren = {
   [nodeId: string]: DiscriminatedItem[];

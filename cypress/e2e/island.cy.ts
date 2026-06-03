@@ -2,7 +2,7 @@ import {
   DocumentItemExtra,
   PackedFolderItemFactory,
   getDocumentExtra,
-} from '@graasp/sdk';
+} from '@lnco-ai/sdk';
 
 import { buildContentPagePath } from '@/config/paths';
 import {

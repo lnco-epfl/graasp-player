@@ -1,4 +1,4 @@
-import { UserSwitchWrapper as GraaspUserSwitch } from '@graasp/ui';
+import { UserSwitchWrapper as GraaspUserSwitch } from '@lnco-ai/ui';
 
 import { SIGN_IN_PATH } from '@/config/constants';
 import { GRAASP_ACCOUNT_HOST } from '@/config/env';

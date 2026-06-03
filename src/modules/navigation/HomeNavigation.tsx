@@ -3,8 +3,8 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 
 import { Box, Button } from '@mui/material';
 
-import { DiscriminatedItem } from '@graasp/sdk';
-import { MainMenu } from '@graasp/ui';
+import { DiscriminatedItem } from '@lnco-ai/sdk';
+import { MainMenu } from '@lnco-ai/ui';
 
 import { usePlayerTranslation } from '@/config/i18n';
 import { buildMainPath } from '@/config/paths';
