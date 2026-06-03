@@ -1,8 +1,8 @@
 import { toast } from 'react-toastify';
 
-import { Notifier, routines } from '@graasp/query-client';
 import { FAILURE_MESSAGES } from '@graasp/translations';
 
+import { Notifier, routines } from '@lnco-ai/query-client';
 import axios from 'axios';
 
 import i18n from './i18n';

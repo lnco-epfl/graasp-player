@@ -5,9 +5,9 @@ import { useParams, useSearchParams } from 'react-router-dom';
 
 import { Alert, Box, Container, Divider, Skeleton, Stack } from '@mui/material';
 
-import { Api } from '@graasp/query-client';
 import { DEFAULT_LANG, FAILURE_MESSAGES } from '@graasp/translations';
 
+import { Api } from '@lnco-ai/query-client';
 import {
   AccountType,
   ActionTriggers,

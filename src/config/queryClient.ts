@@ -1,4 +1,4 @@
-import { configureQueryClient } from '@graasp/query-client';
+import { configureQueryClient } from '@lnco-ai/query-client';
 
 import { API_HOST, DOMAIN } from '@/config/env';
 

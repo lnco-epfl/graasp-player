@@ -1,5 +1,4 @@
-import { API_ROUTES } from '@graasp/query-client';
-
+import { API_ROUTES } from '@lnco-ai/query-client';
 import {
   CompleteGuest,
   DiscriminatedItem,
