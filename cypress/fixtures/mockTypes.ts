@@ -3,7 +3,7 @@ import {
   ItemVisibility,
   PackedItem,
   PermissionLevel,
-} from '@graasp/sdk';
+} from '@lnco-ai/sdk';
 
 export type MockItemTag = Omit<ItemVisibility, 'item'>;
 export type MockItem = Omit<PackedItem, 'permission' | 'hidden' | 'public'> & {

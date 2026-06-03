@@ -3,14 +3,14 @@ import { Link, Outlet, useParams } from 'react-router-dom';
 
 import { Box, Typography, styled } from '@mui/material';
 
-import { Context } from '@graasp/sdk';
+import { Context } from '@lnco-ai/sdk';
 import {
   Main,
   Platform,
   PlatformSwitch,
   defaultHostsMapper,
   usePlatformNavigation,
-} from '@graasp/ui';
+} from '@lnco-ai/ui';
 
 import { GRAASP_ANALYTICS_HOST, GRAASP_BUILDER_HOST } from '@/config/env';
 import { usePlayerTranslation } from '@/config/i18n';

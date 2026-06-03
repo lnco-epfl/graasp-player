@@ -3,7 +3,7 @@ import {
   ItemType,
   buildPdfViewerLink,
   buildSignInPath,
-} from '@graasp/sdk';
+} from '@lnco-ai/sdk';
 
 import {
   AUTHENTICATION_HOST,

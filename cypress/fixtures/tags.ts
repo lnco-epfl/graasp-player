@@ -1,5 +1,4 @@
-import { ItemVisibilityType, Member } from '@graasp/sdk';
-
+import { ItemVisibilityType, Member } from '@lnco-ai/sdk';
 import { v4 } from 'uuid';
 
 import { CURRENT_USER } from './members';

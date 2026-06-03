@@ -1,4 +1,5 @@
 import { API_ROUTES } from '@graasp/query-client';
+
 import {
   CompleteGuest,
   DiscriminatedItem,
@@ -7,8 +8,7 @@ import {
   HttpMethod,
   ItemLoginSchemaFactory,
   ItemLoginSchemaType,
-} from '@graasp/sdk';
-
+} from '@lnco-ai/sdk';
 import { StatusCodes } from 'http-status-codes';
 
 import { buildAutoLoginPath, buildContentPagePath } from '@/config/paths';

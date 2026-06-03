@@ -2,8 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 
 import { Tooltip } from '@mui/material';
 
-import { ClientHostManager, Context } from '@graasp/sdk';
-
+import { ClientHostManager, Context } from '@lnco-ai/sdk';
 import { MapPinIcon } from 'lucide-react';
 
 import { usePlayerTranslation } from '@/config/i18n';

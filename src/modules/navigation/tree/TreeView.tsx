@@ -12,8 +12,7 @@ import {
   ItemType,
   UnionOfConst,
   getIdsFromPath,
-} from '@graasp/sdk';
-
+} from '@lnco-ai/sdk';
 import { ErrorBoundary } from '@sentry/react';
 
 import { GRAASP_MENU_ITEMS } from '@/config/constants';

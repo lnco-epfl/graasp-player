@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import { ChatMessage, CookieKeys, Member } from '@graasp/sdk';
+import { ChatMessage, CookieKeys, Member } from '@lnco-ai/sdk';
 
 import { CURRENT_USER } from '../fixtures/members';
 import { MockItem } from '../fixtures/mockTypes';

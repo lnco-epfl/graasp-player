@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom';
 
-import { AccountType } from '@graasp/sdk';
-import { ItemLoginWrapper } from '@graasp/ui';
+import { AccountType } from '@lnco-ai/sdk';
+import { ItemLoginWrapper } from '@lnco-ai/ui';
 
 import { HOME_PATH } from '@/config/paths';
 import { axios, hooks, mutations } from '@/config/queryClient';

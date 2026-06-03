@@ -2,8 +2,11 @@ import { useParams } from 'react-router-dom';
 
 import { Tooltip } from '@mui/material';
 
-import { ItemType, PermissionLevel, PermissionLevelCompare } from '@graasp/sdk';
-
+import {
+  ItemType,
+  PermissionLevel,
+  PermissionLevelCompare,
+} from '@lnco-ai/sdk';
 import { MessageSquareOff, MessageSquareText } from 'lucide-react';
 
 import { usePlayerTranslation } from '@/config/i18n';

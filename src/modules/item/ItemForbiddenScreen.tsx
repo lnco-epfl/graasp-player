@@ -1,7 +1,7 @@
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Stack } from '@mui/material';
 
-import { Button, ForbiddenContent } from '@graasp/ui';
+import { Button, ForbiddenContent } from '@lnco-ai/ui';
 
 import { usePlayerTranslation } from '@/config/i18n';
 import {

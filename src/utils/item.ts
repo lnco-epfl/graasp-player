@@ -1,4 +1,4 @@
-import { ItemType, PackedItem } from '@graasp/sdk';
+import { ItemType, PackedItem } from '@lnco-ai/sdk';
 
 export const paginationContentFilter = (items: PackedItem[]): PackedItem[] =>
   items

@@ -3,8 +3,8 @@ import type { IBranchProps, INode, LeafProps } from 'react-accessible-treeview';
 import { Box, IconButton, Typography } from '@mui/material';
 import { deepPurple } from '@mui/material/colors';
 
-import { UUID } from '@graasp/sdk';
-import { ItemIcon } from '@graasp/ui';
+import { UUID } from '@lnco-ai/sdk';
+import { ItemIcon } from '@lnco-ai/ui';
 
 import { buildTreeItemClass } from '@/config/selectors';
 import { ItemMetaData } from '@/utils/tree';

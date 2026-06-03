@@ -8,8 +8,7 @@ import {
   Context,
   PLAYER_ITEMS_PREFIX,
   hasAcceptedCookies,
-} from '@graasp/sdk';
-
+} from '@lnco-ai/sdk';
 import * as Sentry from '@sentry/react';
 
 import {

@@ -1,15 +1,12 @@
+import { ScreenCalibration } from '@lnco-ai/sdk';
+
+export type CalibrationFontSize = NonNullable<ScreenCalibration['fontSize']>;
+
 type CalibrationData = {
   screenCalibration?: ScreenCalibration;
   timestamp: number;
   memberId?: string;
   calibrationAppId?: string;
-};
-
-export type CalibrationFontSize = 'small' | 'normal' | 'large' | 'extra-large';
-
-type ScreenCalibration = {
-  scale?: number;
-  fontSize?: CalibrationFontSize;
 };
 
 const calibrationFontSizeValues: CalibrationFontSize[] = [
@@ -82,6 +79,41 @@ export const getCalibrationFontSize = (): CalibrationFontSize | null => {
       return fontSize;
     }
     return null;
+  } catch {
+    return null;
+  }
+};
+
+export const getScreenCalibration = (): ScreenCalibration | null => {
+  const stored = localStorage.getItem(buildCalibrationKey());
+
+  if (!stored) {
+    return null;
+  }
+
+  try {
+    const parsed = JSON.parse(stored) as CalibrationData;
+    const sc = parsed.screenCalibration;
+    if (!sc) {
+      return null;
+    }
+    const result: ScreenCalibration = {};
+    if (typeof sc.scale === 'number') {
+      result.scale = sc.scale;
+    }
+    if (
+      typeof sc.fontSize === 'string' &&
+      calibrationFontSizeValues.includes(sc.fontSize as CalibrationFontSize)
+    ) {
+      result.fontSize = sc.fontSize;
+    }
+    if (typeof sc.participantId === 'string') {
+      result.participantId = sc.participantId;
+    }
+    if (typeof sc.participantCode === 'string') {
+      result.participantCode = sc.participantCode;
+    }
+    return Object.keys(result).length > 0 ? result : null;
   } catch {
     return null;
   }

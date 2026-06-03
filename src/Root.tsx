@@ -14,8 +14,7 @@ import { ThemeProvider } from '@mui/material/styles';
 // https://mui.com/material-ui/customization/theming/#api
 // and https://mui.com/material-ui/guides/localization/#locale-text
 // with the deepMerge util function
-import { theme } from '@graasp/ui';
-
+import { theme } from '@lnco-ai/ui';
 import { ErrorBoundary } from '@sentry/react';
 
 import { SHOW_NOTIFICATIONS } from '@/config/env';

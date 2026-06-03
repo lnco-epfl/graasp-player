@@ -4,8 +4,7 @@ import {
   PermissionLevel,
   PermissionLevelCompare,
   isChildOf,
-} from '@graasp/sdk';
-
+} from '@lnco-ai/sdk';
 import { StatusCodes } from 'http-status-codes';
 
 import { MockItem } from '../fixtures/mockTypes';

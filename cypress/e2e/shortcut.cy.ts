@@ -1,8 +1,7 @@
 import {
   PackedFolderItemFactory,
   PackedShortcutItemFactory,
-} from '@graasp/sdk';
-
+} from '@lnco-ai/sdk';
 import 'cypress-iframe';
 import { v4 } from 'uuid';
 

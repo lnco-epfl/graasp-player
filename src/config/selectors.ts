@@ -1,4 +1,4 @@
-import { Platform } from '@graasp/ui';
+import { Platform } from '@lnco-ai/ui';
 
 export const MAIN_MENU_ID = 'mainMenu';
 export const TREE_VIEW_ID = 'treeView';

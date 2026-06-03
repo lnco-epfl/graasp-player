@@ -10,7 +10,7 @@ import {
   Typography,
 } from '@mui/material';
 
-import { PackedItem } from '@graasp/sdk';
+import { PackedItem } from '@lnco-ai/sdk';
 
 import { usePlayerTranslation } from '@/config/i18n';
 import { hooks } from '@/config/queryClient';

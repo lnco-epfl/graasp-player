@@ -5,8 +5,7 @@ import {
   DiscriminatedItem,
   Member,
   MembershipRequestStatus,
-} from '@graasp/sdk';
-
+} from '@lnco-ai/sdk';
 import { Check, Lock } from 'lucide-react';
 
 import { usePlayerTranslation } from '@/config/i18n';

@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 
 import { Alert, Skeleton, Typography } from '@mui/material';
 
-import { ActionTriggers } from '@graasp/sdk';
+import { ActionTriggers } from '@lnco-ai/sdk';
 
 import { ITEM_PARAM } from '@/config/paths';
 import { hooks, mutations } from '@/config/queryClient';

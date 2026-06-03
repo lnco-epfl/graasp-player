@@ -1,4 +1,4 @@
-import { DiscriminatedItem } from '@graasp/sdk';
+import { DiscriminatedItem } from '@lnco-ai/sdk';
 
 import { buildContentPagePath } from '../../src/config/paths';
 import {
