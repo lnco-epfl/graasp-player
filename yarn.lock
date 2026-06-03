@@ -1121,6 +1121,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@graasp/sdk@npm:5.5.0":
+  version: 5.5.0
+  resolution: "@graasp/sdk@npm:5.5.0"
+  dependencies:
+    "@faker-js/faker": "npm:9.2.0"
+    filesize: "npm:10.1.6"
+    js-cookie: "npm:3.0.5"
+  peerDependencies:
+    date-fns: ^3 || ^4.0.0
+    uuid: ^9 || ^10 || ^11.0.0
+  checksum: 10/4ae3ffbe9df6a351d849e30561f248390f0928f2664eb82b6c50c43a88c2f2ad3f76ab8e296296765716541e009262f9c76c3035f5d6da5572501bf9a295e51b
+  languageName: node
+  linkType: hard
+
 "@graasp/stylis-plugin-rtl@npm:2.2.0":
   version: 2.2.0
   resolution: "@graasp/stylis-plugin-rtl@npm:2.2.0"
@@ -6468,6 +6482,7 @@ __metadata:
     "@eslint/js": "npm:9.15.0"
     "@graasp/chatbox": "npm:3.3.0"
     "@graasp/query-client": "npm:5.5.0"
+    "@graasp/sdk": "npm:5.5.0"
     "@graasp/stylis-plugin-rtl": "npm:2.2.0"
     "@graasp/translations": "npm:1.42.0"
     "@lnco-ai/sdk": "npm:1.0.0"
