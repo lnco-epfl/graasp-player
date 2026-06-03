@@ -20,12 +20,9 @@
 
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
-    "ignoreDeprecations": "6.0",
-
     "types": ["vite/client"],
-    "baseUrl": "./src",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./src/*"]
     }
   },
   "include": ["src"],
