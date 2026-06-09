@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 import { DEFAULT_LANG } from '@graasp/translations';
 
@@ -23,11 +24,13 @@ export const CurrentMemberContextProvider = ({
 }: Props): JSX.Element => {
   const query = useCurrentMember();
 
+  const [search] = useSearchParams();
+
   // update language depending on user setting
   const lang =
-    query.data && query.data?.type === AccountType.Individual
+    query.data?.type === AccountType.Individual
       ? query.data?.extra?.lang
-      : DEFAULT_LANG;
+      : (search.get('lang') ?? DEFAULT_LANG);
   useEffect(() => {
     if (lang !== i18n.language) {
       i18n.changeLanguage(lang);
