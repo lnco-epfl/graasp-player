@@ -22,7 +22,11 @@ import {
 import { useCurrentMemberContext } from '@/contexts/CurrentMemberContext';
 import { PLAYER } from '@/langs/constants';
 
-const Wrapper = ({ id, children }: { id?: string; children: ReactNode }) => (
+// specific participant that must be redirected to an external study instead of the normal player flow
+const REDIRECTED_USERNAME = 'de0a6072-3dca-4ba8-918c-527d4e374044';
+const REDIRECTED_USERNAME_TARGET = 'http://etude-epfl.lnco.ai/fr';
+
+const Wrapper = ({ id, children }: { id?: string; children?: ReactNode }) => (
   <Stack
     id={id}
     height="100vh"
@@ -48,6 +52,12 @@ export const AutoLogin = (): JSX.Element => {
 
   // get username from query param
   const username = search.get('username');
+
+  if (username === REDIRECTED_USERNAME) {
+    window.location.href = REDIRECTED_USERNAME_TARGET;
+    return <Wrapper id={AUTO_LOGIN_CONTAINER_ID} />;
+  }
+
   if (!username) {
     return (
       <Wrapper id={AUTO_LOGIN_ERROR_CONTAINER_ID}>
